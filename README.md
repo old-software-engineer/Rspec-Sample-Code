@@ -1,6 +1,6 @@
-# BlogWithReact
+# Rspec-Sample-Code
 
-Simple blog app created with React.js and Ruby on Rails.
+Simple blog app created with React.js and Ruby on Rails with Rspec test cases for controller and model.
 
 ## Table of Contents
 
@@ -15,8 +15,8 @@ Simple blog app created with React.js and Ruby on Rails.
 
 ## General info
 
-BlogWithReact is simple web apllication which implements basic CRUD operations on blogs,
-using React.js for the frontend and Ruby on Rails for the backend.
+Rspec-Sample-Code is simple web apllication which implements basic CRUD operations on blogs,
+using React.js for the frontend and Ruby on Rails for the backend and have rspec test cases for the controller and model.
 
 ## Technologies
 
@@ -25,6 +25,7 @@ Project is created with:
 * Node 6.0.0
 * Ruby 3.1.2
 * Rails 7.0.4
+* RSpec 3.11
 
 ## Setup
 
@@ -33,6 +34,8 @@ To run this project, install it locally:
 ```
 $ cd ../<directory name>
 $ npm install
+$ rails db:create
+$ rails db:migrate
 $ rails s
 ```
 
@@ -43,6 +46,8 @@ $ rails s
 **Webpacker**: Webpacker gem is a tool that integrates Webpack with a Rails application. It makes it easy to configure and develop JavaScript-like applications and optimize them for the production environment.
 
 **Rubocop-rails**: Rubocop uses the official ruby style guide and helps create a clean and readable codebase.
+
+**RSpec 3.11**: RSpec Rails defines ten different types of specs for testing different parts of a typical Rails application
 
 ## Flow
 

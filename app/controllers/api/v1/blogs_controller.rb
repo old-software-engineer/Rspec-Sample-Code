@@ -1,13 +1,14 @@
 # frozen_string_literal: true
 
-skip_before_action :verify_authenticity_token
-before_action :set_blog, only: %i[show edit update destroy]
 
 # Api Controller
 module Api
   module V1
     # Blogs Api Controller
     class BlogsController < ApplicationController
+      skip_before_action :verify_authenticity_token
+      before_action :set_blog, only: %i[show edit update destroy]
+
       # GET /blogs or /blogs.json
       def index
         @blogs = Blog.all
