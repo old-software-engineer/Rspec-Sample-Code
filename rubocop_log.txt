@@ -1,0 +1,179 @@
+Inspecting 50 files
+CCCC.CCCCCCCCCCCCCCCCCCCC.CCCCCCCCCCC.CC.C.CCCCCCC
+
+Offenses:
+
+Gemfile:1:1: C: Layout/EndOfLine: Carriage return character detected.
+# frozen_string_literal: true ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Rakefile:1:1: C: Layout/EndOfLine: Carriage return character detected.
+# frozen_string_literal: true ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/channels/application_cable/channel.rb:1:1: C: Layout/EndOfLine: Carriage return character detected.
+# frozen_string_literal: true ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/channels/application_cable/connection.rb:1:1: C: Layout/EndOfLine: Carriage return character detected.
+# frozen_string_literal: true ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/application_controller.rb:1:1: C: Layout/EndOfLine: Carriage return character detected.
+# frozen_string_literal: true ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/blogs_controller.rb:1:1: C: Layout/EndOfLine: Carriage return character detected.
+# frozen_string_literal: true ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/blogs_controller.rb:3:1: C: Style/Documentation: Missing top-level documentation comment for class BlogsController.
+class BlogsController < ApplicationController
+^^^^^^^^^^^^^^^^^^^^^
+app/helpers/api/v1/blogs_helper.rb:1:1: C: Layout/EndOfLine: Carriage return character detected.
+# frozen_string_literal: true ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/helpers/api/v1/blogs_helper.rb:5:5: C: Style/Documentation: Missing top-level documentation comment for module Api::V1::BlogsHelper.
+    module BlogsHelper
+    ^^^^^^^^^^^^^^^^^^
+app/helpers/application_helper.rb:1:1: C: Layout/EndOfLine: Carriage return character detected.
+# frozen_string_literal: true ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/helpers/blogs_helper.rb:1:1: C: Layout/EndOfLine: Carriage return character detected.
+# frozen_string_literal: true ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/jobs/application_job.rb:1:1: C: Layout/EndOfLine: Carriage return character detected.
+# frozen_string_literal: true ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/mailers/application_mailer.rb:1:1: C: Layout/EndOfLine: Carriage return character detected.
+# frozen_string_literal: true ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/application_record.rb:1:1: C: Layout/EndOfLine: Carriage return character detected.
+# frozen_string_literal: true ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/blog.rb:3:1: C: Style/Documentation: Missing top-level documentation comment for class Blog.
+class Blog < ApplicationRecord
+^^^^^^^^^^
+app/models/blog.rb:8:7: C: Naming/PredicateName: Rename has_valid_title? to valid_title?.
+  def has_valid_title?
+      ^^^^^^^^^^^^^^^^
+bin/bundle:1:1: C: Layout/EndOfLine: Carriage return character detected.
+#!/usr/bin/env ruby ...
+^^^^^^^^^^^^^^^^^^^
+bin/bundle:24:3: C: Metrics/CyclomaticComplexity: Cyclomatic complexity for cli_arg_version is too high. [9/7]
+  def cli_arg_version ...
+  ^^^^^^^^^^^^^^^^^^^
+bin/bundle:24:3: C: Metrics/MethodLength: Method has too many lines. [11/10]
+  def cli_arg_version ...
+  ^^^^^^^^^^^^^^^^^^^
+bin/bundle:24:3: C: Metrics/PerceivedComplexity: Perceived complexity for cli_arg_version is too high. [9/8]
+  def cli_arg_version ...
+  ^^^^^^^^^^^^^^^^^^^
+bin/bundle:91:3: C: Metrics/MethodLength: Method has too many lines. [12/10]
+  def activate_bundler ...
+  ^^^^^^^^^^^^^^^^^^^^
+bin/bundle:104:121: C: Layout/LineLength: Line is too long. [198/120]
+    warn "Activating bundler (#{bundler_requirement}) failed:\n#{gem_error.message}\n\nTo install the version of bundler this project requires, run `gem install bundler -v '#{bundler_requirement}'`"
+                                                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+bin/importmap:1:1: C: Layout/EndOfLine: Carriage return character detected.
+#!/usr/bin/env ruby ...
+^^^^^^^^^^^^^^^^^^^
+bin/rails:1:1: C: Layout/EndOfLine: Carriage return character detected.
+#!/usr/bin/env ruby.exe ...
+^^^^^^^^^^^^^^^^^^^^^^^
+bin/rake:1:1: C: Layout/EndOfLine: Carriage return character detected.
+#!/usr/bin/env ruby.exe ...
+^^^^^^^^^^^^^^^^^^^^^^^
+bin/setup:1:1: C: Layout/EndOfLine: Carriage return character detected.
+#!/usr/bin/env ruby.exe ...
+^^^^^^^^^^^^^^^^^^^^^^^
+bin/webpack:1:1: C: Layout/EndOfLine: Carriage return character detected.
+#!/usr/bin/env ruby ...
+^^^^^^^^^^^^^^^^^^^
+bin/webpack-dev-server:1:1: C: Layout/EndOfLine: Carriage return character detected.
+#!/usr/bin/env ruby ...
+^^^^^^^^^^^^^^^^^^^
+config.ru:1:1: C: Layout/EndOfLine: Carriage return character detected.
+# frozen_string_literal: true ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/application.rb:1:1: C: Layout/EndOfLine: Carriage return character detected.
+# frozen_string_literal: true ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/boot.rb:1:1: C: Layout/EndOfLine: Carriage return character detected.
+# frozen_string_literal: true ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/environment.rb:1:1: C: Layout/EndOfLine: Carriage return character detected.
+# frozen_string_literal: true ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/environments/production.rb:1:1: C: Layout/EndOfLine: Carriage return character detected.
+# frozen_string_literal: true ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/environments/test.rb:1:1: C: Layout/EndOfLine: Carriage return character detected.
+# frozen_string_literal: true ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/importmap.rb:1:1: C: Layout/EndOfLine: Carriage return character detected.
+# frozen_string_literal: true ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/assets.rb:1:1: C: Layout/EndOfLine: Carriage return character detected.
+# frozen_string_literal: true ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/content_security_policy.rb:1:1: C: Layout/EndOfLine: Carriage return character detected.
+# frozen_string_literal: true ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/filter_parameter_logging.rb:1:1: C: Layout/EndOfLine: Carriage return character detected.
+# frozen_string_literal: true ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/inflections.rb:1:1: C: Layout/EndOfLine: Carriage return character detected.
+# frozen_string_literal: true ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/permissions_policy.rb:1:1: C: Layout/EndOfLine: Carriage return character detected.
+# frozen_string_literal: true ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/puma.rb:1:1: C: Layout/EndOfLine: Carriage return character detected.
+# frozen_string_literal: true ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/routes.rb:1:1: C: Layout/EndOfLine: Carriage return character detected.
+# frozen_string_literal: true ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20221011052533_create_blogs.rb:1:1: C: Layout/EndOfLine: Carriage return character detected.
+# frozen_string_literal: true ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/seeds.rb:1:1: C: Layout/EndOfLine: Carriage return character detected.
+# frozen_string_literal: true ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/blog_spec.rb:5:1: C: Metrics/BlockLength: Block has too many lines. [39/25]
+RSpec.describe Blog, type: :model do ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/requests/api/v1/blogs_spec.rb:5:1: C: Metrics/BlockLength: Block has too many lines. [62/25]
+RSpec.describe 'Api::V1::Blogs', type: :request do ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/requests/api/v1/blogs_spec.rb:13:3: C: Metrics/BlockLength: Block has too many lines. [28/25]
+  describe 'POST /api/v1/blogs/create' do ...
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test/application_system_test_case.rb:1:1: C: Layout/EndOfLine: Carriage return character detected.
+# frozen_string_literal: true ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test/channels/application_cable/connection_test.rb:1:1: C: Layout/EndOfLine: Carriage return character detected.
+# frozen_string_literal: true ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test/controllers/api/v1/blogs_controller_test.rb:1:1: C: Layout/EndOfLine: Carriage return character detected.
+# frozen_string_literal: true ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test/controllers/blogs_controller_test.rb:1:1: C: Layout/EndOfLine: Carriage return character detected.
+# frozen_string_literal: true ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test/models/blog_test.rb:1:1: C: Layout/EndOfLine: Carriage return character detected.
+# frozen_string_literal: true ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test/system/blogs_test.rb:1:1: C: Layout/EndOfLine: Carriage return character detected.
+# frozen_string_literal: true ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test/test_helper.rb:1:1: C: Layout/EndOfLine: Carriage return character detected.
+# frozen_string_literal: true ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+50 files inspected, 54 offenses detected
+
+Tip: Based on detected gems, the following RuboCop extension libraries might be helpful:
+  * rubocop-rspec (https://rubygems.org/gems/rubocop-rspec)
+
+The following RuboCop extension libraries are installed but not loaded in config:
+  * rubocop-rails
+
+You can opt out of this message by adding the following to your config (see https://docs.rubocop.org/rubocop/extensions.html#extension-suggestions for more options):
+  AllCops:
+    SuggestExtensions: false

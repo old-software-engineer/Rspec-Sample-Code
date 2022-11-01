@@ -1,1 +1,85 @@
-# Rspec-Sample-Code
+# BlogWithReact
+
+Simple blog app created with React.js and Ruby on Rails.
+
+## Table of Contents
+
+* **General info**
+* **Technologies**
+* **Setup**
+* **Gems**
+* **Flow**
+* **Add New Components**
+
+
+
+## General info
+
+BlogWithReact is simple web apllication which implements basic CRUD operations on blogs,
+using React.js for the frontend and Ruby on Rails for the backend.
+
+## Technologies
+
+Project is created with:
+* React 18.2.0
+* Node 6.0.0
+* Ruby 3.1.2
+* Rails 7.0.4
+
+## Setup
+
+To run this project, install it locally:
+
+```
+$ cd ../<directory name>
+$ npm install
+$ rails s
+```
+
+## Gems
+ 
+**React-Rails**: React-Rails gem is used in this aap to implement React.
+
+**Webpacker**: Webpacker gem is a tool that integrates Webpack with a Rails application. It makes it easy to configure and develop JavaScript-like applications and optimize them for the production environment.
+
+**Rubocop-rails**: Rubocop uses the official ruby style guide and helps create a clean and readable codebase.
+
+## Flow
+
+**Rails Flow**:
+
+In the rails setup there is a single route for our landing page which is empty. The controller has a single index action.
+This controller’s only function is to provide a direct route from Rails to React, which is why we’re only setting the index method.
+
+**API Controller**:
+ The blog api controller consists of seprate actions for CRUD and the response is rendered in json.
+
+**React Flow**:
+  
+ Add the following line of code to the < head> tag of  app/views/layouts/application.html.erb file:
+< %= javascript_pack_tag 'index' %>
+This will add the JavaScript pack to our application header, which will cause all the JavaScript files, including React ones, to be executed within the index page.
+
+index.jsx  imbeds a div container in our empty page with  react App component. This will initiate our react app.
+
+The App.jsx consists of all the routes of our react app and the components corresponding to the routes.
+
+(In all components Bootstrap is being used for styling.)
+ 
+**Other components**:
+
+**Navbar**: Navbar consists of a simple bootstrap navbar with title of the app.
+
+**Blogs**: Blogs fetches and maps through the data from the api and sends it as props to Blog component.All the blogs are rendered inside this component. It also contains a button to create new blog.
+
+**Blog**: Blog component display individual  blog as a card using props.
+
+**ShowBlog**: ShowBlog component displays individual  blogs in seprate page and contains buttons to edit and delete the blog.  
+
+**EditBlog**: EditBlog renders a form to edit the selected blog and sends a PATCH request to the rails API.
+
+**Form**: Form renders a bootstrap form to create new blog and sends a POST request to the API.
+
+## Add New Components
+
+To add new component create a new jsx file inside app/javascript/components with component name starting with capital letter. Import the file where you want to render the component.

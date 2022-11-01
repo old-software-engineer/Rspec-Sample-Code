@@ -1,0 +1,2110 @@
+Started GET "/" for 127.0.0.1 at 2022-10-19 16:32:41 +0530
+  [1m[35m (8.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20221011052533_create_blogs.rb
+
+
+):
+  
+activerecord (7.0.4) lib/active_record/migration.rb:627:in `check_pending!'
+activerecord (7.0.4) lib/active_record/migration.rb:592:in `block (2 levels) in call'
+activesupport (7.0.4) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (7.0.4) lib/active_record/migration.rb:597:in `block in call'
+activerecord (7.0.4) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.4) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.4) lib/rack/proxy.rb:78:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (12.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateBlogs (20221011052533)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "blogs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "imgurl" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221011052533"]]
+  [1m[36mTRANSACTION (5.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-10-19 11:04:43.647201"], ["updated_at", "2022-10-19 11:04:43.647201"]]
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2022-10-19 16:35:14 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/index.html.erb within layouts/application
+  Rendered blogs/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 427)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/codegarage/Documents/React-Rails-Sample-Blog-Post/public/packs
+[Webpacker] /home/codegarage/.rvm/rubies/ruby-3.1.2/bin/ruby: warning: shebang line ending with \r may cause problems
+warning package.json: No license field
+
+[Webpacker] Hash: 19dcb3d1ba5b114c0bb9
+Version: webpack 4.46.0
+Time: 5623ms
+Built at: 19/10/2022 4:35:23 pm
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-718e497312ec402806f9.js  2.05 MiB       application  [emitted] [immutable]  application
+     js/application-718e497312ec402806f9.js.map   2.2 MiB       application  [emitted] [dev]        application
+               js/index-40594172a60cce78aaa3.js  1.52 MiB             index  [emitted] [immutable]  index
+           js/index-40594172a60cce78aaa3.js.map   1.6 MiB             index  [emitted] [dev]        index
+    js/server_rendering-bed44352629136250f3b.js  2.05 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-bed44352629136250f3b.js.map   2.2 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.01 KiB                    [emitted]              
+Entrypoint application = js/application-718e497312ec402806f9.js js/application-718e497312ec402806f9.js.map
+Entrypoint index = js/index-40594172a60cce78aaa3.js js/index-40594172a60cce78aaa3.js.map
+Entrypoint server_rendering = js/server_rendering-bed44352629136250f3b.js js/server_rendering-bed44352629136250f3b.js.map
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 362 bytes {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/index.jsx] 753 bytes {index} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {index} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {index} {server_rendering} [built]
+    + 33 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 9681.2ms | Allocations: 97783)
+Completed 200 OK in 9787ms (Views: 9712.4ms | ActiveRecord: 0.0ms | Allocations: 104386)
+
+
+Started GET "/api/v1/blogs/index" for 127.0.0.1 at 2022-10-19 16:35:24 +0530
+Processing by Api::V1::BlogsController#index as */*
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:14:in `index'
+Completed 200 OK in 7ms (Views: 3.0ms | ActiveRecord: 0.4ms | Allocations: 1902)
+
+
+Started GET "/" for 127.0.0.1 at 2022-10-19 16:35:34 +0530
+Processing by BlogsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/index.html.erb within layouts/application
+  Rendered blogs/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 9)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 2984)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.0ms | Allocations: 3281)
+
+
+Started GET "/api/v1/blogs/index" for 127.0.0.1 at 2022-10-19 16:35:34 +0530
+Processing by Api::V1::BlogsController#index as */*
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:14:in `index'
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.1ms | Allocations: 711)
+
+
+Started POST "/api/v1/blogs/create" for 127.0.0.1 at 2022-10-19 16:35:41 +0530
+Processing by Api::V1::BlogsController#create as JSON
+  Parameters: {"title"=>"", "body"=>"", "imgurl"=>"", "blog"=>{"title"=>"", "body"=>"", "imgurl"=>""}}
+[31mUnpermitted parameter: :blog. Context: { controller: Api::V1::BlogsController, action: create, request: #<ActionDispatch::Request:0x00007fa91d184598>, params: {"title"=>"", "body"=>"", "imgurl"=>"", "controller"=>"api/v1/blogs", "action"=>"create", "blog"=>{"title"=>"", "body"=>"", "imgurl"=>""}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:38:in `create'
+  [1m[36mBlog Create (0.5ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "imgurl", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", ""], ["body", ""], ["imgurl", ""], ["created_at", "2022-10-19 11:05:41.701792"], ["updated_at", "2022-10-19 11:05:41.701792"]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:38:in `create'
+  [1m[36mTRANSACTION (6.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:38:in `create'
+Completed 200 OK in 134ms (Views: 1.2ms | ActiveRecord: 7.8ms | Allocations: 16128)
+
+
+Started GET "/" for 127.0.0.1 at 2022-10-19 16:35:41 +0530
+Processing by BlogsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/index.html.erb within layouts/application
+  Rendered blogs/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 9)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 2932)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms | Allocations: 3226)
+
+
+Started GET "/api/v1/blogs/index" for 127.0.0.1 at 2022-10-19 16:35:41 +0530
+Processing by Api::V1::BlogsController#index as */*
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:14:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.2ms | Allocations: 913)
+
+
+Started GET "/api/v1/blogs/1" for ::1 at 2022-10-19 16:35:46 +0530
+Processing by Api::V1::BlogsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:65:in `set_blog'
+Completed 200 OK in 6ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 2833)
+
+
+Started OPTIONS "/api/v1/blogs/1" for ::1 at 2022-10-19 16:35:48 +0530
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/blogs/1"):
+  
+Started OPTIONS "/api/v1/blogs/1" for ::1 at 2022-10-19 16:35:49 +0530
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/blogs/1"):
+  
+Started OPTIONS "/api/v1/blogs/1" for ::1 at 2022-10-19 16:35:49 +0530
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/blogs/1"):
+  
+Started OPTIONS "/api/v1/blogs/1" for ::1 at 2022-10-19 16:35:50 +0530
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/blogs/1"):
+  
+Started OPTIONS "/api/v1/blogs/1" for ::1 at 2022-10-19 16:35:50 +0530
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/blogs/1"):
+  
+Started OPTIONS "/api/v1/blogs/1" for ::1 at 2022-10-19 16:35:50 +0530
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/blogs/1"):
+  
+Started OPTIONS "/api/v1/blogs/1" for ::1 at 2022-10-19 16:35:51 +0530
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/blogs/1"):
+  
+Started GET "/show/1" for 127.0.0.1 at 2022-10-19 16:35:53 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/show/1"):
+  
+Started GET "/newblog" for 127.0.0.1 at 2022-10-19 16:35:56 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/newblog"):
+  
+Started GET "/" for 127.0.0.1 at 2022-10-19 16:36:07 +0530
+Processing by BlogsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/index.html.erb within layouts/application
+  Rendered blogs/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 2878)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms | Allocations: 3177)
+
+
+Started GET "/api/v1/blogs/index" for 127.0.0.1 at 2022-10-19 16:36:07 +0530
+Processing by Api::V1::BlogsController#index as */*
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:14:in `index'
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.2ms | Allocations: 928)
+
+
+Started GET "/" for 127.0.0.1 at 2022-10-19 16:36:10 +0530
+Processing by BlogsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/index.html.erb within layouts/application
+  Rendered blogs/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 2742)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 3002)
+
+
+Started GET "/api/v1/blogs/index" for 127.0.0.1 at 2022-10-19 16:36:10 +0530
+Processing by Api::V1::BlogsController#index as */*
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:14:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.3ms | Allocations: 831)
+
+
+Started GET "/api/v1/blogs/1" for ::1 at 2022-10-19 16:36:11 +0530
+Processing by Api::V1::BlogsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:65:in `set_blog'
+Completed 200 OK in 5ms (Views: 1.6ms | ActiveRecord: 0.3ms | Allocations: 712)
+
+
+Started OPTIONS "/api/v1/blogs/1" for ::1 at 2022-10-19 16:36:13 +0530
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/blogs/1"):
+  
+Started OPTIONS "/api/v1/blogs/1" for ::1 at 2022-10-19 16:36:15 +0530
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/blogs/1"):
+  
+Started OPTIONS "/api/v1/blogs/1" for ::1 at 2022-10-19 16:36:16 +0530
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/blogs/1"):
+  
+Started GET "/" for 127.0.0.1 at 2022-10-19 16:36:17 +0530
+Processing by BlogsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/index.html.erb within layouts/application
+  Rendered blogs/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 2752)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms | Allocations: 3012)
+
+
+Started GET "/api/v1/blogs/index" for 127.0.0.1 at 2022-10-19 16:36:17 +0530
+Processing by Api::V1::BlogsController#index as */*
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:14:in `index'
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.2ms | Allocations: 831)
+
+
+Started POST "/api/v1/blogs/create" for 127.0.0.1 at 2022-10-19 16:36:22 +0530
+Processing by Api::V1::BlogsController#create as JSON
+  Parameters: {"title"=>"", "body"=>"", "imgurl"=>"", "blog"=>{"title"=>"", "body"=>"", "imgurl"=>""}}
+[31mUnpermitted parameter: :blog. Context: { controller: Api::V1::BlogsController, action: create, request: #<ActionDispatch::Request:0x00007fa8cf4614d0>, params: {"title"=>"", "body"=>"", "imgurl"=>"", "controller"=>"api/v1/blogs", "action"=>"create", "blog"=>{"title"=>"", "body"=>"", "imgurl"=>""}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:38:in `create'
+  [1m[36mBlog Create (0.4ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "imgurl", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", ""], ["body", ""], ["imgurl", ""], ["created_at", "2022-10-19 11:06:22.445675"], ["updated_at", "2022-10-19 11:06:22.445675"]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:38:in `create'
+  [1m[36mTRANSACTION (14.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:38:in `create'
+Completed 200 OK in 22ms (Views: 0.4ms | ActiveRecord: 15.0ms | Allocations: 2153)
+
+
+Started GET "/" for 127.0.0.1 at 2022-10-19 16:36:22 +0530
+Processing by BlogsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/index.html.erb within layouts/application
+  Rendered blogs/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 2739)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms | Allocations: 2999)
+
+
+Started GET "/api/v1/blogs/index" for 127.0.0.1 at 2022-10-19 16:36:22 +0530
+Processing by Api::V1::BlogsController#index as */*
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:14:in `index'
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.1ms | Allocations: 954)
+
+
+Started GET "/api/v1/blogs/2" for ::1 at 2022-10-19 16:36:28 +0530
+Processing by Api::V1::BlogsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:65:in `set_blog'
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 688)
+
+
+Started OPTIONS "/api/v1/blogs/2" for ::1 at 2022-10-19 16:36:38 +0530
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/blogs/2"):
+  
+Started OPTIONS "/api/v1/blogs/2" for ::1 at 2022-10-19 16:36:40 +0530
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/blogs/2"):
+  
+Started OPTIONS "/api/v1/blogs/2" for ::1 at 2022-10-19 16:36:40 +0530
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/blogs/2"):
+  
+Started OPTIONS "/api/v1/blogs/2" for ::1 at 2022-10-19 16:36:41 +0530
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/blogs/2"):
+  
+Started GET "/api/v1/blogs/2" for ::1 at 2022-10-19 16:36:51 +0530
+Processing by Api::V1::BlogsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:65:in `set_blog'
+Completed 200 OK in 7ms (Views: 3.5ms | ActiveRecord: 0.3ms | Allocations: 689)
+
+
+Started GET "/api/v1/blogs/index" for 127.0.0.1 at 2022-10-19 16:36:54 +0530
+Processing by Api::V1::BlogsController#index as */*
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:14:in `index'
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.3ms | Allocations: 954)
+
+
+Started POST "/api/v1/blogs/create" for 127.0.0.1 at 2022-10-19 16:41:45 +0530
+Processing by Api::V1::BlogsController#create as JSON
+  Parameters: {"title"=>"", "body"=>"", "imgurl"=>"", "blog"=>{"title"=>"", "body"=>"", "imgurl"=>""}}
+[31mUnpermitted parameter: :blog. Context: { controller: Api::V1::BlogsController, action: create, request: #<ActionDispatch::Request:0x00007fa8cf4dcd38>, params: {"title"=>"", "body"=>"", "imgurl"=>"", "controller"=>"api/v1/blogs", "action"=>"create", "blog"=>{"title"=>"", "body"=>"", "imgurl"=>""}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:38:in `create'
+  [1m[36mBlog Create (0.3ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "imgurl", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", ""], ["body", ""], ["imgurl", ""], ["created_at", "2022-10-19 11:11:45.298315"], ["updated_at", "2022-10-19 11:11:45.298315"]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:38:in `create'
+  [1m[36mTRANSACTION (14.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:38:in `create'
+Completed 200 OK in 22ms (Views: 0.7ms | ActiveRecord: 14.5ms | Allocations: 2093)
+
+
+Started GET "/" for 127.0.0.1 at 2022-10-19 16:41:45 +0530
+Processing by BlogsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/index.html.erb within layouts/application
+  Rendered blogs/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 2764)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.0ms | Allocations: 3024)
+
+
+Started GET "/api/v1/blogs/index" for 127.0.0.1 at 2022-10-19 16:41:45 +0530
+Processing by Api::V1::BlogsController#index as */*
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:14:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.4ms | Allocations: 1077)
+
+
+Started GET "/api/v1/blogs/3" for ::1 at 2022-10-19 16:41:46 +0530
+Processing by Api::V1::BlogsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:65:in `set_blog'
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 0.4ms | Allocations: 688)
+
+
+Started OPTIONS "/api/v1/blogs/3" for ::1 at 2022-10-19 16:41:47 +0530
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/blogs/3"):
+  
+Started OPTIONS "/api/v1/blogs/3" for ::1 at 2022-10-19 16:41:47 +0530
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/blogs/3"):
+  
+Started OPTIONS "/api/v1/blogs/3" for ::1 at 2022-10-19 16:41:48 +0530
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/blogs/3"):
+  
+Started OPTIONS "/api/v1/blogs/3" for ::1 at 2022-10-19 16:41:48 +0530
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/blogs/3"):
+  
+Started OPTIONS "/api/v1/blogs/3" for ::1 at 2022-10-19 16:41:48 +0530
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/blogs/3"):
+  
+Started GET "/api/v1/blogs/index" for 127.0.0.1 at 2022-10-19 16:42:00 +0530
+Processing by Api::V1::BlogsController#index as */*
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:14:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.2ms | Allocations: 1077)
+
+
+Started POST "/api/v1/blogs/create" for 127.0.0.1 at 2022-10-19 16:42:04 +0530
+Processing by Api::V1::BlogsController#create as JSON
+  Parameters: {"title"=>"", "body"=>"", "imgurl"=>"", "blog"=>{"title"=>"", "body"=>"", "imgurl"=>""}}
+[31mUnpermitted parameter: :blog. Context: { controller: Api::V1::BlogsController, action: create, request: #<ActionDispatch::Request:0x00007fa8cf31f6a8>, params: {"title"=>"", "body"=>"", "imgurl"=>"", "controller"=>"api/v1/blogs", "action"=>"create", "blog"=>{"title"=>"", "body"=>"", "imgurl"=>""}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:38:in `create'
+  [1m[36mBlog Create (0.2ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "imgurl", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", ""], ["body", ""], ["imgurl", ""], ["created_at", "2022-10-19 11:12:04.290048"], ["updated_at", "2022-10-19 11:12:04.290048"]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:38:in `create'
+  [1m[36mTRANSACTION (14.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:38:in `create'
+Completed 200 OK in 20ms (Views: 0.7ms | ActiveRecord: 14.7ms | Allocations: 2093)
+
+
+Started GET "/" for 127.0.0.1 at 2022-10-19 16:42:04 +0530
+Processing by BlogsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/index.html.erb within layouts/application
+  Rendered blogs/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 2764)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.0ms | Allocations: 3024)
+
+
+Started GET "/api/v1/blogs/index" for 127.0.0.1 at 2022-10-19 16:42:04 +0530
+Processing by Api::V1::BlogsController#index as */*
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:14:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.1ms | Allocations: 1201)
+
+
+Started GET "/api/v1/blogs/4" for ::1 at 2022-10-19 16:42:11 +0530
+Processing by Api::V1::BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mBlog Load (1.6ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:65:in `set_blog'
+Completed 200 OK in 7ms (Views: 0.9ms | ActiveRecord: 1.6ms | Allocations: 688)
+
+
+Started OPTIONS "/api/v1/blogs/4" for ::1 at 2022-10-19 16:42:11 +0530
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/blogs/4"):
+  
+Started OPTIONS "/api/v1/blogs/4" for ::1 at 2022-10-19 16:42:12 +0530
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/blogs/4"):
+  
+Started OPTIONS "/api/v1/blogs/4" for ::1 at 2022-10-19 16:42:19 +0530
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/blogs/4"):
+  
+Started OPTIONS "/api/v1/blogs/4" for ::1 at 2022-10-19 16:42:19 +0530
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/blogs/4"):
+  
+Started OPTIONS "/api/v1/blogs/4" for ::1 at 2022-10-19 16:46:53 +0530
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/blogs/4"):
+  
+Started GET "/api/v1/blogs/4" for ::1 at 2022-10-19 16:46:55 +0530
+Processing by Api::V1::BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:65:in `set_blog'
+Completed 200 OK in 6ms (Views: 0.7ms | ActiveRecord: 0.4ms | Allocations: 688)
+
+
+Started GET "/api/v1/blogs/index" for 127.0.0.1 at 2022-10-19 16:46:56 +0530
+Processing by Api::V1::BlogsController#index as */*
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:14:in `index'
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.4ms | Allocations: 1201)
+
+
+Started GET "/api/v1/blogs/4" for ::1 at 2022-10-19 16:47:07 +0530
+Processing by Api::V1::BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:65:in `set_blog'
+Completed 200 OK in 6ms (Views: 2.0ms | ActiveRecord: 0.2ms | Allocations: 688)
+
+
+Started GET "/" for 127.0.0.1 at 2022-10-19 16:47:08 +0530
+Processing by BlogsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/index.html.erb within layouts/application
+  Rendered blogs/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 2752)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms | Allocations: 3012)
+
+
+Started GET "/api/v1/blogs/index" for 127.0.0.1 at 2022-10-19 16:47:08 +0530
+Processing by Api::V1::BlogsController#index as */*
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:14:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms | Allocations: 1201)
+
+
+Started GET "/show/4" for 127.0.0.1 at 2022-10-19 16:47:10 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/show/4"):
+  
+Started GET "/" for ::1 at 2022-10-19 16:49:23 +0530
+Processing by BlogsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/index.html.erb within layouts/application
+  Rendered blogs/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 3504)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms | Allocations: 3764)
+
+
+Started GET "/api/v1/blogs/index" for ::1 at 2022-10-19 16:49:23 +0530
+Processing by Api::V1::BlogsController#index as */*
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:14:in `index'
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.2ms | Allocations: 1201)
+
+
+Started GET "/sw.js" for ::1 at 2022-10-19 16:49:25 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/sw.js"):
+  
+Started GET "/api/v1/blogs/4" for ::1 at 2022-10-19 16:49:31 +0530
+Processing by Api::V1::BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:65:in `set_blog'
+Completed 200 OK in 5ms (Views: 0.8ms | ActiveRecord: 0.3ms | Allocations: 688)
+
+
+Started DELETE "/api/v1/blogs/4" for ::1 at 2022-10-19 16:49:40 +0530
+Processing by Api::V1::BlogsController#destroy as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:65:in `set_blog'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:56:in `destroy'
+  [1m[36mBlog Destroy (0.2ms)[0m  [1m[31mDELETE FROM "blogs" WHERE "blogs"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:56:in `destroy'
+  [1m[36mTRANSACTION (13.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:56:in `destroy'
+Completed 200 OK in 19ms (Views: 0.4ms | ActiveRecord: 14.2ms | Allocations: 2184)
+
+
+Started GET "/" for ::1 at 2022-10-19 16:49:40 +0530
+Processing by BlogsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/index.html.erb within layouts/application
+  Rendered blogs/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 3587)
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 3847)
+
+
+Started GET "/api/v1/blogs/index" for ::1 at 2022-10-19 16:49:40 +0530
+Processing by Api::V1::BlogsController#index as */*
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:14:in `index'
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.1ms | Allocations: 1077)
+
+
+Started GET "/sw.js" for ::1 at 2022-10-19 16:49:42 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/sw.js"):
+  
+Started GET "/api/v1/blogs/2" for ::1 at 2022-10-19 16:49:43 +0530
+Processing by Api::V1::BlogsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:65:in `set_blog'
+Completed 200 OK in 6ms (Views: 0.8ms | ActiveRecord: 0.4ms | Allocations: 688)
+
+
+Started DELETE "/api/v1/blogs/2" for ::1 at 2022-10-19 16:49:44 +0530
+Processing by Api::V1::BlogsController#destroy as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:65:in `set_blog'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:56:in `destroy'
+  [1m[36mBlog Destroy (0.2ms)[0m  [1m[31mDELETE FROM "blogs" WHERE "blogs"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:56:in `destroy'
+  [1m[36mTRANSACTION (5.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:56:in `destroy'
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 6.2ms | Allocations: 2077)
+
+
+Started GET "/" for ::1 at 2022-10-19 16:49:44 +0530
+Processing by BlogsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/index.html.erb within layouts/application
+  Rendered blogs/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 3567)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms | Allocations: 3827)
+
+
+Started GET "/api/v1/blogs/index" for ::1 at 2022-10-19 16:49:44 +0530
+Processing by Api::V1::BlogsController#index as */*
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:14:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms | Allocations: 954)
+
+
+Started GET "/sw.js" for ::1 at 2022-10-19 16:49:46 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/sw.js"):
+  
+Started GET "/api/v1/blogs/3" for ::1 at 2022-10-19 16:49:52 +0530
+Processing by Api::V1::BlogsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mBlog Load (2.0ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:65:in `set_blog'
+Completed 200 OK in 6ms (Views: 0.8ms | ActiveRecord: 2.0ms | Allocations: 688)
+
+
+Started PATCH "/api/v1/blogs/3" for ::1 at 2022-10-19 16:49:56 +0530
+Processing by Api::V1::BlogsController#update as JSON
+  Parameters: {"title"=>"jghj", "body"=>"jghjg", "imgurl"=>"", "id"=>"3", "blog"=>{"title"=>"jghj", "body"=>"jghjg", "imgurl"=>""}}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:65:in `set_blog'
+[31mUnpermitted parameters: :id, :blog. Context: { controller: Api::V1::BlogsController, action: update, request: #<ActionDispatch::Request:0x00007fa91c15de30>, params: {"title"=>"jghj", "body"=>"jghjg", "imgurl"=>"", "controller"=>"api/v1/blogs", "action"=>"update", "id"=>"3", "blog"=>{"title"=>"jghj", "body"=>"jghjg", "imgurl"=>""}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:47:in `update'
+  [1m[36mBlog Update (0.4ms)[0m  [1m[33mUPDATE "blogs" SET "title" = ?, "body" = ?, "updated_at" = ? WHERE "blogs"."id" = ?[0m  [["title", "jghj"], ["body", "jghjg"], ["updated_at", "2022-10-19 11:19:56.886128"], ["id", 3]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:47:in `update'
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:47:in `update'
+Completed 200 OK in 14ms (Views: 0.4ms | ActiveRecord: 5.6ms | Allocations: 2781)
+
+
+Started GET "/" for ::1 at 2022-10-19 16:49:56 +0530
+Processing by BlogsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/index.html.erb within layouts/application
+  Rendered blogs/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 3579)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.0ms | Allocations: 3839)
+
+
+Started GET "/api/v1/blogs/index" for ::1 at 2022-10-19 16:49:57 +0530
+Processing by Api::V1::BlogsController#index as */*
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:14:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.2ms | Allocations: 954)
+
+
+Started GET "/sw.js" for ::1 at 2022-10-19 16:49:58 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/sw.js"):
+  
+Started GET "/api/v1/blogs/3" for ::1 at 2022-10-19 16:50:06 +0530
+Processing by Api::V1::BlogsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:65:in `set_blog'
+Completed 200 OK in 5ms (Views: 1.3ms | ActiveRecord: 0.3ms | Allocations: 689)
+
+
+Started DELETE "/api/v1/blogs/3" for ::1 at 2022-10-19 16:50:08 +0530
+Processing by Api::V1::BlogsController#destroy as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:65:in `set_blog'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:56:in `destroy'
+  [1m[36mBlog Destroy (0.5ms)[0m  [1m[31mDELETE FROM "blogs" WHERE "blogs"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:56:in `destroy'
+  [1m[36mTRANSACTION (27.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:56:in `destroy'
+Completed 200 OK in 33ms (Views: 0.3ms | ActiveRecord: 28.0ms | Allocations: 2077)
+
+
+Started GET "/" for ::1 at 2022-10-19 16:50:08 +0530
+Processing by BlogsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/index.html.erb within layouts/application
+  Rendered blogs/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 3584)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms | Allocations: 3844)
+
+
+Started GET "/api/v1/blogs/index" for ::1 at 2022-10-19 16:50:08 +0530
+Processing by Api::V1::BlogsController#index as */*
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:14:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.1ms | Allocations: 831)
+
+
+Started GET "/api/v1/blogs/1" for ::1 at 2022-10-19 16:50:09 +0530
+Processing by Api::V1::BlogsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:65:in `set_blog'
+Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 0.3ms | Allocations: 688)
+
+
+Started GET "/sw.js" for ::1 at 2022-10-19 16:50:10 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/sw.js"):
+  
+Started DELETE "/api/v1/blogs/1" for ::1 at 2022-10-19 16:50:10 +0530
+Processing by Api::V1::BlogsController#destroy as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:65:in `set_blog'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:56:in `destroy'
+  [1m[36mBlog Destroy (0.2ms)[0m  [1m[31mDELETE FROM "blogs" WHERE "blogs"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:56:in `destroy'
+  [1m[36mTRANSACTION (14.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:56:in `destroy'
+Completed 200 OK in 19ms (Views: 0.3ms | ActiveRecord: 14.6ms | Allocations: 2078)
+
+
+Started GET "/" for ::1 at 2022-10-19 16:50:10 +0530
+Processing by BlogsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/index.html.erb within layouts/application
+  Rendered blogs/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 3591)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 3851)
+
+
+Started GET "/api/v1/blogs/index" for ::1 at 2022-10-19 16:50:10 +0530
+Processing by Api::V1::BlogsController#index as */*
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:14:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 701)
+
+
+Started GET "/sw.js" for ::1 at 2022-10-19 16:50:12 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/sw.js"):
+  
+Started POST "/api/v1/blogs/create" for ::1 at 2022-10-19 16:50:27 +0530
+Processing by Api::V1::BlogsController#create as JSON
+  Parameters: {"title"=>"title 1", "body"=>"body new", "imgurl"=>"", "blog"=>{"title"=>"title 1", "body"=>"body new", "imgurl"=>""}}
+[31mUnpermitted parameter: :blog. Context: { controller: Api::V1::BlogsController, action: create, request: #<ActionDispatch::Request:0x00007fa91c06dd18>, params: {"title"=>"title 1", "body"=>"body new", "imgurl"=>"", "controller"=>"api/v1/blogs", "action"=>"create", "blog"=>{"title"=>"title 1", "body"=>"body new", "imgurl"=>""}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:38:in `create'
+  [1m[36mBlog Create (0.3ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "imgurl", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "title 1"], ["body", "body new"], ["imgurl", ""], ["created_at", "2022-10-19 11:20:27.536573"], ["updated_at", "2022-10-19 11:20:27.536573"]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:38:in `create'
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:38:in `create'
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 4.7ms | Allocations: 2088)
+
+
+Started GET "/" for ::1 at 2022-10-19 16:50:27 +0530
+Processing by BlogsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/index.html.erb within layouts/application
+  Rendered blogs/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 3591)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms | Allocations: 3851)
+
+
+Started GET "/api/v1/blogs/index" for ::1 at 2022-10-19 16:50:27 +0530
+Processing by Api::V1::BlogsController#index as */*
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:14:in `index'
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.1ms | Allocations: 831)
+
+
+Started GET "/sw.js" for ::1 at 2022-10-19 16:50:29 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/sw.js"):
+  
+Started GET "/" for ::1 at 2022-10-19 16:53:54 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/index.html.erb within layouts/application
+  Rendered blogs/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 427)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 87.4ms | Allocations: 27930)
+Completed 200 OK in 193ms (Views: 123.8ms | ActiveRecord: 0.0ms | Allocations: 34099)
+
+
+Started GET "/api/v1/blogs/index" for ::1 at 2022-10-19 16:53:55 +0530
+Processing by Api::V1::BlogsController#index as */*
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:14:in `index'
+Completed 200 OK in 17ms (Views: 13.8ms | ActiveRecord: 0.8ms | Allocations: 15287)
+
+
+Started GET "/sw.js" for ::1 at 2022-10-19 16:53:56 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/sw.js"):
+  
+Started POST "/api/v1/blogs/create" for ::1 at 2022-10-19 16:54:09 +0530
+Processing by Api::V1::BlogsController#create as JSON
+  Parameters: {"title"=>"title 2", "body"=>"body 2", "imgurl"=>"", "blog"=>{"title"=>"title 2", "body"=>"body 2", "imgurl"=>""}}
+[31mUnpermitted parameter: :blog. Context: { controller: Api::V1::BlogsController, action: create, request: #<ActionDispatch::Request:0x00007fc728dde478>, params: {"title"=>"title 2", "body"=>"body 2", "imgurl"=>"", "controller"=>"api/v1/blogs", "action"=>"create", "blog"=>{"title"=>"title 2", "body"=>"body 2", "imgurl"=>""}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:38:in `create'
+  [1m[36mBlog Create (0.3ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "imgurl", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "title 2"], ["body", "body 2"], ["imgurl", ""], ["created_at", "2022-10-19 11:24:09.486110"], ["updated_at", "2022-10-19 11:24:09.486110"]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:38:in `create'
+  [1m[36mTRANSACTION (4.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:38:in `create'
+Completed 200 OK in 10ms (Views: 0.4ms | ActiveRecord: 5.0ms | Allocations: 3397)
+
+
+Started GET "/" for ::1 at 2022-10-19 16:54:09 +0530
+Processing by BlogsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/index.html.erb within layouts/application
+  Rendered blogs/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 9)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 3765)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms | Allocations: 4054)
+
+
+Started GET "/api/v1/blogs/index" for ::1 at 2022-10-19 16:54:09 +0530
+Processing by Api::V1::BlogsController#index as */*
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:14:in `index'
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.2ms | Allocations: 986)
+
+
+Started GET "/sw.js" for ::1 at 2022-10-19 16:54:11 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/sw.js"):
+  
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+Started GET "/" for ::1 at 2022-10-19 17:32:05 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/index.html.erb within layouts/application
+  Rendered blogs/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 427)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 202.8ms | Allocations: 28368)
+Completed 200 OK in 222ms (Views: 210.3ms | ActiveRecord: 0.0ms | Allocations: 34539)
+
+
+Started GET "/api/v1/blogs/index" for ::1 at 2022-10-19 17:32:06 +0530
+Processing by Api::V1::BlogsController#index as */*
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:14:in `index'
+Completed 200 OK in 21ms (Views: 18.6ms | ActiveRecord: 0.7ms | Allocations: 15412)
+
+
+Started GET "/sw.js" for ::1 at 2022-10-19 17:32:08 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/sw.js"):
+  
+Started GET "/api/v1/blogs/5" for ::1 at 2022-10-19 17:32:08 +0530
+Processing by Api::V1::BlogsController#show as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mBlog Load (0.7ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:65:in `set_blog'
+Completed 200 OK in 10ms (Views: 0.7ms | ActiveRecord: 0.7ms | Allocations: 2938)
+
+
+Started DELETE "/api/v1/blogs/5" for ::1 at 2022-10-19 17:32:09 +0530
+Processing by Api::V1::BlogsController#destroy as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:65:in `set_blog'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:56:in `destroy'
+  [1m[36mBlog Destroy (1.2ms)[0m  [1m[31mDELETE FROM "blogs" WHERE "blogs"."id" = ?[0m  [["id", 5]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:56:in `destroy'
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:56:in `destroy'
+Completed 200 OK in 15ms (Views: 0.3ms | ActiveRecord: 6.6ms | Allocations: 2309)
+
+
+Started GET "/" for ::1 at 2022-10-19 17:32:09 +0530
+Processing by BlogsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/index.html.erb within layouts/application
+  Rendered blogs/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 9)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 3782)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms | Allocations: 4069)
+
+
+Started GET "/api/v1/blogs/index" for ::1 at 2022-10-19 17:32:09 +0530
+Processing by Api::V1::BlogsController#index as */*
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:14:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.2ms | Allocations: 835)
+
+
+Started GET "/api/v1/blogs/6" for ::1 at 2022-10-19 17:32:10 +0530
+Processing by Api::V1::BlogsController#show as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:65:in `set_blog'
+Completed 200 OK in 5ms (Views: 1.1ms | ActiveRecord: 0.4ms | Allocations: 700)
+
+
+Started GET "/sw.js" for ::1 at 2022-10-19 17:32:11 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/sw.js"):
+  
+Started DELETE "/api/v1/blogs/6" for ::1 at 2022-10-19 17:32:11 +0530
+Processing by Api::V1::BlogsController#destroy as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:65:in `set_blog'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:56:in `destroy'
+  [1m[36mBlog Destroy (0.2ms)[0m  [1m[31mDELETE FROM "blogs" WHERE "blogs"."id" = ?[0m  [["id", 6]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:56:in `destroy'
+  [1m[36mTRANSACTION (14.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:56:in `destroy'
+Completed 200 OK in 20ms (Views: 0.3ms | ActiveRecord: 14.6ms | Allocations: 2089)
+
+
+Started GET "/" for ::1 at 2022-10-19 17:32:11 +0530
+Processing by BlogsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/index.html.erb within layouts/application
+  Rendered blogs/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 3593)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms | Allocations: 3853)
+
+
+Started GET "/api/v1/blogs/index" for ::1 at 2022-10-19 17:32:11 +0530
+Processing by Api::V1::BlogsController#index as */*
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:14:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms | Allocations: 701)
+
+
+Started GET "/sw.js" for ::1 at 2022-10-19 17:32:13 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/sw.js"):
+  
+Started GET "/df" for ::1 at 2022-10-19 18:32:52 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/df"):
+  
+Started GET "/sw.js" for ::1 at 2022-10-19 18:32:55 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/sw.js"):
+  
+Started GET "/ig" for ::1 at 2022-10-20 10:49:02 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/ig"):
+  
+Started GET "/sw.js" for ::1 at 2022-10-20 10:49:05 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/sw.js"):
+  
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateBlogs (20221011052533)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "blogs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "imgurl" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221011052533"]]
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-10-21 05:27:23.267869"], ["updated_at", "2022-10-21 05:27:23.267869"]]
+  [1m[36mTRANSACTION (4.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/fd" for ::1 at 2022-10-21 11:29:22 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/fd"):
+  
+Started GET "/sw.js" for ::1 at 2022-10-21 11:29:24 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/sw.js"):
+  
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked host: 6d64b8147d7c.in.ngrok.io
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked host: 6d64b8147d7c.in.ngrok.io
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked host: 6d64b8147d7c.in.ngrok.io
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked host: 6d64b8147d7c.in.ngrok.io
+Started GET "/api/v1/blogs/create" for 103.149.154.11 at 2022-10-21 11:52:11 +0530
+Cannot render console from 103.149.154.11! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::BlogsController#show as */*
+  Parameters: {"title"=>"sample title", "id"=>"create"}
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:66:in `set_blog'
+Completed 404 Not Found in 23ms (ActiveRecord: 0.8ms | Allocations: 7609)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Blog with 'id'=create):
+  
+app/controllers/api/v1/blogs_controller.rb:66:in `set_blog'
+Started GET "/api/v1/blogs/create" for 103.149.154.11 at 2022-10-21 11:57:07 +0530
+Cannot render console from 103.149.154.11! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::BlogsController#show as */*
+  Parameters: {"title"=>"sample title", "id"=>"create"}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:66:in `set_blog'
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms | Allocations: 1015)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Blog with 'id'=create):
+  
+app/controllers/api/v1/blogs_controller.rb:66:in `set_blog'
+Started GET "/api/v1/blogs/create" for 103.149.154.11 at 2022-10-21 11:58:21 +0530
+Cannot render console from 103.149.154.11! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::BlogsController#show as */*
+  Parameters: {"title"=>"sample title", "id"=>"create"}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:67:in `set_blog'
+Completed 404 Not Found in 4ms (ActiveRecord: 0.6ms | Allocations: 3307)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Blog with 'id'=create):
+  
+app/controllers/api/v1/blogs_controller.rb:67:in `set_blog'
+Started GET "/api/v1/blogs/create" for 103.149.154.11 at 2022-10-21 12:01:02 +0530
+Cannot render console from 103.149.154.11! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::BlogsController#show as */*
+  Parameters: {"title"=>"sample title", "id"=>"create"}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:67:in `set_blog'
+Completed 404 Not Found in 7ms (ActiveRecord: 0.5ms | Allocations: 7613)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Blog with 'id'=create):
+  
+app/controllers/api/v1/blogs_controller.rb:67:in `set_blog'
+Started GET "/ytdtdf" for ::1 at 2022-10-21 12:13:54 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/ytdtdf"):
+  
+Started GET "/sw.js" for ::1 at 2022-10-21 12:13:56 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/sw.js"):
+  
+Started GET "/api/v1/blogs/create" for 103.149.154.11 at 2022-10-21 12:14:27 +0530
+Cannot render console from 103.149.154.11! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::BlogsController#show as */*
+  Parameters: {"title"=>"sample title", "id"=>"create"}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:67:in `set_blog'
+Completed 404 Not Found in 1ms (ActiveRecord: 0.3ms | Allocations: 1188)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Blog with 'id'=create):
+  
+app/controllers/api/v1/blogs_controller.rb:67:in `set_blog'
+Started GET "/api/v1/blogs/create" for 103.149.154.11 at 2022-10-21 12:18:34 +0530
+Cannot render console from 103.149.154.11! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+SyntaxError (/home/codegarage/Documents/React-Rails-Sample-Blog-Post/config/routes.rb:9: syntax error, unexpected local variable or method, expecting `end'
+      post 'blogs/create' to: 'blogs#create'
+                          ^~
+/home/codegarage/Documents/React-Rails-Sample-Blog-Post/config/routes.rb:12: syntax error, unexpected `end', expecting end-of-input
+  end
+  ^~~
+):
+  
+config/routes.rb:9: syntax error, unexpected local variable or method, expecting `end'
+config/routes.rb:12: syntax error, unexpected `end', expecting end-of-input
+config/routes.rb:9: syntax error, unexpected local variable or method, expecting `end'
+config/routes.rb:12: syntax error, unexpected `end', expecting end-of-input
+config/routes.rb:9: syntax error, unexpected local variable or method, expecting `end'
+config/routes.rb:12: syntax error, unexpected `end', expecting end-of-input
+Started GET "/api/v1/blogs/create" for 103.149.154.11 at 2022-10-21 12:18:56 +0530
+Cannot render console from 103.149.154.11! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::BlogsController#show as */*
+  Parameters: {"title"=>"sample title", "id"=>"create"}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:67:in `set_blog'
+Completed 404 Not Found in 13ms (ActiveRecord: 1.4ms | Allocations: 7580)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Blog with 'id'=create):
+  
+app/controllers/api/v1/blogs_controller.rb:67:in `set_blog'
+Started GET "/api/v1/blogs/create" for 103.149.154.11 at 2022-10-21 12:20:33 +0530
+Cannot render console from 103.149.154.11! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::BlogsController#show as */*
+  Parameters: {"title"=>"sample title", "id"=>"create"}
+  [1m[36mBlog Load (0.7ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:67:in `set_blog'
+Completed 404 Not Found in 10ms (ActiveRecord: 1.1ms | Allocations: 7613)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Blog with 'id'=create):
+  
+app/controllers/api/v1/blogs_controller.rb:67:in `set_blog'
+Started GET "/ytdtdf" for ::1 at 2022-10-21 12:21:44 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/ytdtdf"):
+  
+Started GET "/sw.js" for ::1 at 2022-10-21 12:21:46 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/sw.js"):
+  
+Started GET "/xx" for ::1 at 2022-10-21 12:23:45 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/xx"):
+  
+Started GET "/sw.js" for ::1 at 2022-10-21 12:23:48 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/sw.js"):
+  
+Started GET "/api/v1/blogs/create" for 103.149.154.11 at 2022-10-21 12:25:43 +0530
+Cannot render console from 103.149.154.11! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::BlogsController#show as */*
+  Parameters: {"title"=>"sample title", "id"=>"create"}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:67:in `set_blog'
+Completed 404 Not Found in 9ms (ActiveRecord: 0.7ms | Allocations: 7727)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Blog with 'id'=create):
+  
+app/controllers/api/v1/blogs_controller.rb:67:in `set_blog'
+Started GET "/api/v1/blogs/create" for 103.149.154.11 at 2022-10-21 12:25:54 +0530
+Cannot render console from 103.149.154.11! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::BlogsController#show as */*
+  Parameters: {"title"=>"sample title", "id"=>"create"}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:67:in `set_blog'
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms | Allocations: 950)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Blog with 'id'=create):
+  
+app/controllers/api/v1/blogs_controller.rb:67:in `set_blog'
+Started POST "/api/v1/blogs/create" for 103.149.154.11 at 2022-10-21 12:25:59 +0530
+Cannot render console from 103.149.154.11! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::BlogsController#create as */*
+  Parameters: {"title"=>"sample title"}
+Completed 200 OK in 19ms (Views: 5.0ms | ActiveRecord: 0.0ms | Allocations: 15942)
+
+
+Started POST "/api/v1/blogs/create" for 103.149.154.11 at 2022-10-21 12:28:12 +0530
+Cannot render console from 103.149.154.11! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::BlogsController#create as */*
+  Parameters: {"title"=>"sample title", "body"=>"sample body"}
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 1266)
+
+
+Started POST "/api/v1/blogs/create" for 103.149.154.11 at 2022-10-21 12:28:25 +0530
+Cannot render console from 103.149.154.11! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::BlogsController#create as */*
+  Parameters: {"title"=>"sample title", "body"=>"sample body", "imgurl"=>"ihms."}
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 991)
+
+
+Started POST "/api/v1/blogs/create" for 103.149.154.11 at 2022-10-21 12:28:34 +0530
+Cannot render console from 103.149.154.11! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::BlogsController#create as */*
+  Parameters: {"title"=>"sample title", "body"=>"sample body", "imgurl"=>"ihms.jpg"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:39:in `create'
+  [1m[36mBlog Create (0.8ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "imgurl", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "sample title"], ["body", "sample body"], ["imgurl", "ihms.jpg"], ["created_at", "2022-10-21 06:58:34.635412"], ["updated_at", "2022-10-21 06:58:34.635412"]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:39:in `create'
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:39:in `create'
+Completed 200 OK in 11ms (Views: 0.9ms | ActiveRecord: 5.4ms | Allocations: 3068)
+
+
+Started POST "/api/v1/blogs/create" for 103.149.154.11 at 2022-10-21 12:35:21 +0530
+Cannot render console from 103.149.154.11! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::BlogsController#create as */*
+  Parameters: {"title"=>"sample title", "body"=>"sample body", "imgurl"=>"ihms.jpg"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:38:in `create'
+  [1m[36mBlog Create (0.2ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "imgurl", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "sample title"], ["body", "sample body"], ["imgurl", "ihms.jpg"], ["created_at", "2022-10-21 07:05:21.489511"], ["updated_at", "2022-10-21 07:05:21.489511"]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:38:in `create'
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:38:in `create'
+Completed 200 OK in 15ms (Views: 0.6ms | ActiveRecord: 6.0ms | Allocations: 4923)
+
+
+Started POST "/api/v1/blogs/create" for 103.149.154.11 at 2022-10-21 12:40:41 +0530
+Cannot render console from 103.149.154.11! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::BlogsController#create as */*
+  Parameters: {"title"=>"sample title", "body"=>"sample body"}
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 1313)
+
+
+Started POST "/api/v1/blogs/create" for 103.149.154.11 at 2022-10-21 12:41:22 +0530
+Cannot render console from 103.149.154.11! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::BlogsController#create as */*
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.0ms | Allocations: 1820)
+
+
+Started POST "/api/v1/blogs/create" for 122.179.192.54 at 2022-10-21 14:00:06 +0530
+Cannot render console from 122.179.192.54! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::BlogsController#create as */*
+Completed 200 OK in 20ms (Views: 4.7ms | ActiveRecord: 0.4ms | Allocations: 20539)
+
+
+Started POST "/api/v1/blogs/create" for 122.179.192.54 at 2022-10-21 14:00:14 +0530
+Cannot render console from 122.179.192.54! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Api::V1::BlogsController#create as */*
+  Parameters: {"body"=>"sample body"}
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 1726)
+
+
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/" for ::1 at 2022-10-26 16:29:33 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/index.html.erb within layouts/application
+  Rendered blogs/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 427)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 104.2ms | Allocations: 28419)
+Completed 200 OK in 122ms (Views: 111.6ms | ActiveRecord: 0.0ms | Allocations: 34603)
+
+
+Started GET "/api/v1/blogs/index" for ::1 at 2022-10-26 16:29:33 +0530
+Processing by Api::V1::BlogsController#index as */*
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:14:in `index'
+Completed 200 OK in 25ms (Views: 20.6ms | ActiveRecord: 0.8ms | Allocations: 15654)
+
+
+Started GET "/ihms.jpg" for ::1 at 2022-10-26 16:29:34 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/ihms.jpg"):
+  
+Started GET "/api/v1/blogs/1" for ::1 at 2022-10-26 16:29:35 +0530
+Processing by Api::V1::BlogsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:65:in `set_blog'
+Completed 200 OK in 8ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 2959)
+
+
+Started GET "/sw.js" for ::1 at 2022-10-26 16:29:35 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/sw.js"):
+  
+Started DELETE "/api/v1/blogs/1" for ::1 at 2022-10-26 16:29:38 +0530
+Processing by Api::V1::BlogsController#destroy as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:65:in `set_blog'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:56:in `destroy'
+  [1m[36mBlog Destroy (0.6ms)[0m  [1m[31mDELETE FROM "blogs" WHERE "blogs"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:56:in `destroy'
+  [1m[36mTRANSACTION (14.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:56:in `destroy'
+Completed 200 OK in 22ms (Views: 0.4ms | ActiveRecord: 14.9ms | Allocations: 2308)
+
+
+Started GET "/" for ::1 at 2022-10-26 16:29:38 +0530
+Processing by BlogsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/index.html.erb within layouts/application
+  Rendered blogs/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 3709)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.0ms | Allocations: 3982)
+
+
+Started GET "/api/v1/blogs/index" for ::1 at 2022-10-26 16:29:38 +0530
+Processing by Api::V1::BlogsController#index as */*
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:14:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms | Allocations: 835)
+
+
+Started GET "/ihms.jpg" for ::1 at 2022-10-26 16:29:38 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/ihms.jpg"):
+  
+Started GET "/api/v1/blogs/2" for ::1 at 2022-10-26 16:29:39 +0530
+Processing by Api::V1::BlogsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:65:in `set_blog'
+Completed 200 OK in 5ms (Views: 0.9ms | ActiveRecord: 0.3ms | Allocations: 703)
+
+
+Started GET "/sw.js" for ::1 at 2022-10-26 16:29:40 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/sw.js"):
+  
+Started DELETE "/api/v1/blogs/2" for ::1 at 2022-10-26 16:29:40 +0530
+Processing by Api::V1::BlogsController#destroy as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:65:in `set_blog'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:56:in `destroy'
+  [1m[36mBlog Destroy (0.2ms)[0m  [1m[31mDELETE FROM "blogs" WHERE "blogs"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:56:in `destroy'
+  [1m[36mTRANSACTION (5.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:56:in `destroy'
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 6.0ms | Allocations: 2078)
+
+
+Started GET "/" for ::1 at 2022-10-26 16:29:40 +0530
+Processing by BlogsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/index.html.erb within layouts/application
+  Rendered blogs/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 3583)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 3846)
+
+
+Started GET "/api/v1/blogs/index" for ::1 at 2022-10-26 16:29:40 +0530
+Processing by Api::V1::BlogsController#index as */*
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:14:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.2ms | Allocations: 701)
+
+
+Started GET "/sw.js" for ::1 at 2022-10-26 16:29:42 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/sw.js"):
+  
+Started POST "/api/v1/blogs/create" for ::1 at 2022-10-26 16:29:43 +0530
+Processing by Api::V1::BlogsController#create as JSON
+  Parameters: {"title"=>"", "body"=>"", "imgurl"=>"", "blog"=>{"title"=>"", "body"=>"", "imgurl"=>""}}
+[31mUnpermitted parameter: :blog. Context: { controller: Api::V1::BlogsController, action: create, request: #<ActionDispatch::Request:0x00007ff23a621388>, params: {"title"=>"", "body"=>"", "imgurl"=>"", "controller"=>"api/v1/blogs", "action"=>"create", "blog"=>{"title"=>"", "body"=>"", "imgurl"=>""}} }[0m
+Completed 500 Internal Server Error in 19ms (Views: 16.5ms | ActiveRecord: 0.0ms | Allocations: 3580)
+
+
+Started POST "/api/v1/blogs/create" for ::1 at 2022-10-26 16:29:45 +0530
+Processing by Api::V1::BlogsController#create as JSON
+  Parameters: {"title"=>"", "body"=>"", "imgurl"=>"", "blog"=>{"title"=>"", "body"=>"", "imgurl"=>""}}
+[31mUnpermitted parameter: :blog. Context: { controller: Api::V1::BlogsController, action: create, request: #<ActionDispatch::Request:0x00007ff23a5e4398>, params: {"title"=>"", "body"=>"", "imgurl"=>"", "controller"=>"api/v1/blogs", "action"=>"create", "blog"=>{"title"=>"", "body"=>"", "imgurl"=>""}} }[0m
+Completed 500 Internal Server Error in 4ms (Views: 1.8ms | ActiveRecord: 0.0ms | Allocations: 1904)
+
+
+Started POST "/api/v1/blogs/create" for ::1 at 2022-10-26 16:29:45 +0530
+Processing by Api::V1::BlogsController#create as JSON
+  Parameters: {"title"=>"", "body"=>"", "imgurl"=>"", "blog"=>{"title"=>"", "body"=>"", "imgurl"=>""}}
+[31mUnpermitted parameter: :blog. Context: { controller: Api::V1::BlogsController, action: create, request: #<ActionDispatch::Request:0x00007ff23a5c15c8>, params: {"title"=>"", "body"=>"", "imgurl"=>"", "controller"=>"api/v1/blogs", "action"=>"create", "blog"=>{"title"=>"", "body"=>"", "imgurl"=>""}} }[0m
+Completed 500 Internal Server Error in 5ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 1911)
+
+
+Started POST "/api/v1/blogs/create" for ::1 at 2022-10-26 16:30:13 +0530
+Processing by Api::V1::BlogsController#create as JSON
+  Parameters: {"title"=>"sample 1", "body"=>"", "imgurl"=>"", "blog"=>{"title"=>"sample 1", "body"=>"", "imgurl"=>""}}
+[31mUnpermitted parameter: :blog. Context: { controller: Api::V1::BlogsController, action: create, request: #<ActionDispatch::Request:0x00007ff23a59c228>, params: {"title"=>"sample 1", "body"=>"", "imgurl"=>"", "controller"=>"api/v1/blogs", "action"=>"create", "blog"=>{"title"=>"sample 1", "body"=>"", "imgurl"=>""}} }[0m
+Completed 500 Internal Server Error in 4ms (Views: 1.7ms | ActiveRecord: 0.0ms | Allocations: 1626)
+
+
+Started POST "/api/v1/blogs/create" for ::1 at 2022-10-26 16:30:26 +0530
+Processing by Api::V1::BlogsController#create as JSON
+  Parameters: {"title"=>"sample 1", "body"=>"body 1", "imgurl"=>"abc.jpg", "blog"=>{"title"=>"sample 1", "body"=>"body 1", "imgurl"=>"abc.jpg"}}
+[31mUnpermitted parameter: :blog. Context: { controller: Api::V1::BlogsController, action: create, request: #<ActionDispatch::Request:0x00007ff23a57bb40>, params: {"title"=>"sample 1", "body"=>"body 1", "imgurl"=>"abc.jpg", "controller"=>"api/v1/blogs", "action"=>"create", "blog"=>{"title"=>"sample 1", "body"=>"body 1", "imgurl"=>"abc.jpg"}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:38:in `create'
+  [1m[36mBlog Create (0.4ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "imgurl", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "sample 1"], ["body", "body 1"], ["imgurl", "abc.jpg"], ["created_at", "2022-10-26 11:00:26.118436"], ["updated_at", "2022-10-26 11:00:26.118436"]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:38:in `create'
+  [1m[36mTRANSACTION (14.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:38:in `create'
+Completed 200 OK in 23ms (Views: 0.7ms | ActiveRecord: 14.8ms | Allocations: 3008)
+
+
+Started GET "/" for ::1 at 2022-10-26 16:30:26 +0530
+Processing by BlogsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/index.html.erb within layouts/application
+  Rendered blogs/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 9)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 3749)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.0ms | Allocations: 4035)
+
+
+Started GET "/api/v1/blogs/index" for ::1 at 2022-10-26 16:30:26 +0530
+Processing by Api::V1::BlogsController#index as */*
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:14:in `index'
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.2ms | Allocations: 863)
+
+
+Started GET "/abc.jpg" for ::1 at 2022-10-26 16:30:26 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/abc.jpg"):
+  
+Started GET "/sw.js" for ::1 at 2022-10-26 16:30:28 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/sw.js"):
+  
+Started GET "/api/v1/blogs/3" for ::1 at 2022-10-26 16:30:30 +0530
+Processing by Api::V1::BlogsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:65:in `set_blog'
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 719)
+
+
+Started PATCH "/api/v1/blogs/3" for ::1 at 2022-10-26 16:30:44 +0530
+Processing by Api::V1::BlogsController#update as JSON
+  Parameters: {"title"=>"title 1", "body"=>"dsfdsfsdfsdfds", "imgurl"=>"abc.jpg", "id"=>"3", "blog"=>{"title"=>"title 1", "body"=>"dsfdsfsdfsdfds", "imgurl"=>"abc.jpg"}}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:65:in `set_blog'
+[31mUnpermitted parameters: :id, :blog. Context: { controller: Api::V1::BlogsController, action: update, request: #<ActionDispatch::Request:0x00007ff23aa62280>, params: {"title"=>"title 1", "body"=>"dsfdsfsdfsdfds", "imgurl"=>"abc.jpg", "controller"=>"api/v1/blogs", "action"=>"update", "id"=>"3", "blog"=>{"title"=>"title 1", "body"=>"dsfdsfsdfsdfds", "imgurl"=>"abc.jpg"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:47:in `update'
+  [1m[36mBlog Update (0.2ms)[0m  [1m[33mUPDATE "blogs" SET "title" = ?, "body" = ?, "updated_at" = ? WHERE "blogs"."id" = ?[0m  [["title", "title 1"], ["body", "dsfdsfsdfsdfds"], ["updated_at", "2022-10-26 11:00:44.136776"], ["id", 3]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:47:in `update'
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:47:in `update'
+Completed 200 OK in 11ms (Views: 0.6ms | ActiveRecord: 4.8ms | Allocations: 2821)
+
+
+Started GET "/" for ::1 at 2022-10-26 16:30:44 +0530
+Processing by BlogsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/index.html.erb within layouts/application
+  Rendered blogs/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 3591)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms | Allocations: 3852)
+
+
+Started GET "/api/v1/blogs/index" for ::1 at 2022-10-26 16:30:44 +0530
+Processing by Api::V1::BlogsController#index as */*
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:14:in `index'
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.1ms | Allocations: 831)
+
+
+Started GET "/abc.jpg" for ::1 at 2022-10-26 16:30:44 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/abc.jpg"):
+  
+Started GET "/sw.js" for ::1 at 2022-10-26 16:30:46 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/sw.js"):
+  
+Started GET "/api/v1/blogs/3" for ::1 at 2022-10-26 16:37:11 +0530
+Processing by Api::V1::BlogsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:65:in `set_blog'
+Completed 200 OK in 5ms (Views: 0.9ms | ActiveRecord: 0.9ms | Allocations: 887)
+
+
+Started GET "/api/v1/blogs/3" for ::1 at 2022-10-26 16:37:17 +0530
+Processing by Api::V1::BlogsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:65:in `set_blog'
+Completed 200 OK in 5ms (Views: 1.0ms | ActiveRecord: 0.4ms | Allocations: 703)
+
+
+Started GET "/api/v1/blogs/index" for ::1 at 2022-10-26 16:37:22 +0530
+Processing by Api::V1::BlogsController#index as */*
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:14:in `index'
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.3ms | Allocations: 860)
+
+
+Started GET "/abc.jpg" for ::1 at 2022-10-26 16:37:22 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/abc.jpg"):
+  
+Started POST "/api/v1/blogs/create" for ::1 at 2022-10-26 16:37:36 +0530
+Processing by Api::V1::BlogsController#create as JSON
+  Parameters: {"title"=>"dfxfcvb", "body"=>"gcvnm", "imgurl"=>"jdxjtdxjt.jpg", "blog"=>{"title"=>"dfxfcvb", "body"=>"gcvnm", "imgurl"=>"jdxjtdxjt.jpg"}}
+[31mUnpermitted parameter: :blog. Context: { controller: Api::V1::BlogsController, action: create, request: #<ActionDispatch::Request:0x00007ff2724926b0>, params: {"title"=>"dfxfcvb", "body"=>"gcvnm", "imgurl"=>"jdxjtdxjt.jpg", "controller"=>"api/v1/blogs", "action"=>"create", "blog"=>{"title"=>"dfxfcvb", "body"=>"gcvnm", "imgurl"=>"jdxjtdxjt.jpg"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:38:in `create'
+  [1m[36mBlog Create (0.2ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "imgurl", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "dfxfcvb"], ["body", "gcvnm"], ["imgurl", "jdxjtdxjt.jpg"], ["created_at", "2022-10-26 11:07:36.473342"], ["updated_at", "2022-10-26 11:07:36.473342"]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:38:in `create'
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:38:in `create'
+Completed 200 OK in 10ms (Views: 0.8ms | ActiveRecord: 5.0ms | Allocations: 2115)
+
+
+Started GET "/" for ::1 at 2022-10-26 16:37:36 +0530
+Processing by BlogsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/index.html.erb within layouts/application
+  Rendered blogs/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 3585)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms | Allocations: 3846)
+
+
+Started GET "/api/v1/blogs/index" for ::1 at 2022-10-26 16:37:36 +0530
+Processing by Api::V1::BlogsController#index as */*
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:14:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms | Allocations: 954)
+
+
+Started GET "/abc.jpg" for ::1 at 2022-10-26 16:37:36 +0530
+Started GET "/jdxjtdxjt.jpg" for ::1 at 2022-10-26 16:37:36 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/abc.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/jdxjtdxjt.jpg"):
+  
+Started GET "/sw.js" for ::1 at 2022-10-26 16:37:38 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/sw.js"):
+  
+Started GET "/api/v1/blogs/4" for ::1 at 2022-10-26 16:37:39 +0530
+Processing by Api::V1::BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:65:in `set_blog'
+Completed 200 OK in 5ms (Views: 1.1ms | ActiveRecord: 0.3ms | Allocations: 703)
+
+
+Started PATCH "/api/v1/blogs/4" for ::1 at 2022-10-26 16:37:50 +0530
+Processing by Api::V1::BlogsController#update as JSON
+  Parameters: {"title"=>"", "body"=>"", "imgurl"=>"xyz/jpg", "id"=>"4", "blog"=>{"title"=>"", "body"=>"", "imgurl"=>"xyz/jpg"}}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:65:in `set_blog'
+[31mUnpermitted parameters: :id, :blog. Context: { controller: Api::V1::BlogsController, action: update, request: #<ActionDispatch::Request:0x00007ff23a5b8ab8>, params: {"title"=>"", "body"=>"", "imgurl"=>"xyz/jpg", "controller"=>"api/v1/blogs", "action"=>"update", "id"=>"4", "blog"=>{"title"=>"", "body"=>"", "imgurl"=>"xyz/jpg"}} }[0m
+Completed 500 Internal Server Error in 6ms (Views: 1.9ms | ActiveRecord: 0.2ms | Allocations: 2433)
+
+
+Started PATCH "/api/v1/blogs/4" for ::1 at 2022-10-26 16:37:51 +0530
+Processing by Api::V1::BlogsController#update as JSON
+  Parameters: {"title"=>"", "body"=>"", "imgurl"=>"xyz/jpg", "id"=>"4", "blog"=>{"title"=>"", "body"=>"", "imgurl"=>"xyz/jpg"}}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:65:in `set_blog'
+[31mUnpermitted parameters: :id, :blog. Context: { controller: Api::V1::BlogsController, action: update, request: #<ActionDispatch::Request:0x00007ff23a5b54f8>, params: {"title"=>"", "body"=>"", "imgurl"=>"xyz/jpg", "controller"=>"api/v1/blogs", "action"=>"update", "id"=>"4", "blog"=>{"title"=>"", "body"=>"", "imgurl"=>"xyz/jpg"}} }[0m
+Completed 500 Internal Server Error in 5ms (Views: 2.1ms | ActiveRecord: 0.2ms | Allocations: 2433)
+
+
+Started PATCH "/api/v1/blogs/4" for ::1 at 2022-10-26 16:37:52 +0530
+Processing by Api::V1::BlogsController#update as JSON
+  Parameters: {"title"=>"", "body"=>"", "imgurl"=>"xyz/jpg", "id"=>"4", "blog"=>{"title"=>"", "body"=>"", "imgurl"=>"xyz/jpg"}}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:65:in `set_blog'
+[31mUnpermitted parameters: :id, :blog. Context: { controller: Api::V1::BlogsController, action: update, request: #<ActionDispatch::Request:0x00007ff23a583a48>, params: {"title"=>"", "body"=>"", "imgurl"=>"xyz/jpg", "controller"=>"api/v1/blogs", "action"=>"update", "id"=>"4", "blog"=>{"title"=>"", "body"=>"", "imgurl"=>"xyz/jpg"}} }[0m
+Completed 500 Internal Server Error in 5ms (Views: 1.7ms | ActiveRecord: 0.1ms | Allocations: 2432)
+
+
+Started PATCH "/api/v1/blogs/4" for ::1 at 2022-10-26 16:37:52 +0530
+Processing by Api::V1::BlogsController#update as JSON
+  Parameters: {"title"=>"", "body"=>"", "imgurl"=>"xyz/jpg", "id"=>"4", "blog"=>{"title"=>"", "body"=>"", "imgurl"=>"xyz/jpg"}}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:65:in `set_blog'
+[31mUnpermitted parameters: :id, :blog. Context: { controller: Api::V1::BlogsController, action: update, request: #<ActionDispatch::Request:0x00007ff23a54b918>, params: {"title"=>"", "body"=>"", "imgurl"=>"xyz/jpg", "controller"=>"api/v1/blogs", "action"=>"update", "id"=>"4", "blog"=>{"title"=>"", "body"=>"", "imgurl"=>"xyz/jpg"}} }[0m
+Completed 500 Internal Server Error in 5ms (Views: 1.7ms | ActiveRecord: 0.1ms | Allocations: 2430)
+
+
+Started PATCH "/api/v1/blogs/4" for ::1 at 2022-10-26 16:37:55 +0530
+Processing by Api::V1::BlogsController#update as JSON
+  Parameters: {"title"=>"asdf", "body"=>"asdasd", "imgurl"=>"xyz/jpg", "id"=>"4", "blog"=>{"title"=>"asdf", "body"=>"asdasd", "imgurl"=>"xyz/jpg"}}
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:65:in `set_blog'
+[31mUnpermitted parameters: :id, :blog. Context: { controller: Api::V1::BlogsController, action: update, request: #<ActionDispatch::Request:0x00007ff23a511970>, params: {"title"=>"asdf", "body"=>"asdasd", "imgurl"=>"xyz/jpg", "controller"=>"api/v1/blogs", "action"=>"update", "id"=>"4", "blog"=>{"title"=>"asdf", "body"=>"asdasd", "imgurl"=>"xyz/jpg"}} }[0m
+Completed 500 Internal Server Error in 7ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 1876)
+
+
+Started PATCH "/api/v1/blogs/4" for ::1 at 2022-10-26 16:38:07 +0530
+Processing by Api::V1::BlogsController#update as JSON
+  Parameters: {"title"=>"", "body"=>"", "imgurl"=>"xyz.jpg", "id"=>"4", "blog"=>{"title"=>"", "body"=>"", "imgurl"=>"xyz.jpg"}}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:65:in `set_blog'
+[31mUnpermitted parameters: :id, :blog. Context: { controller: Api::V1::BlogsController, action: update, request: #<ActionDispatch::Request:0x00007ff23a50b570>, params: {"title"=>"", "body"=>"", "imgurl"=>"xyz.jpg", "controller"=>"api/v1/blogs", "action"=>"update", "id"=>"4", "blog"=>{"title"=>"", "body"=>"", "imgurl"=>"xyz.jpg"}} }[0m
+Completed 500 Internal Server Error in 4ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 2152)
+
+
+Started PATCH "/api/v1/blogs/4" for ::1 at 2022-10-26 16:38:08 +0530
+Processing by Api::V1::BlogsController#update as JSON
+  Parameters: {"title"=>"", "body"=>"", "imgurl"=>"xyz.jpg", "id"=>"4", "blog"=>{"title"=>"", "body"=>"", "imgurl"=>"xyz.jpg"}}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:65:in `set_blog'
+[31mUnpermitted parameters: :id, :blog. Context: { controller: Api::V1::BlogsController, action: update, request: #<ActionDispatch::Request:0x00007ff23a4cdf90>, params: {"title"=>"", "body"=>"", "imgurl"=>"xyz.jpg", "controller"=>"api/v1/blogs", "action"=>"update", "id"=>"4", "blog"=>{"title"=>"", "body"=>"", "imgurl"=>"xyz.jpg"}} }[0m
+Completed 500 Internal Server Error in 6ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 2152)
+
+
+Started PATCH "/api/v1/blogs/4" for ::1 at 2022-10-26 16:38:09 +0530
+Processing by Api::V1::BlogsController#update as JSON
+  Parameters: {"title"=>"", "body"=>"", "imgurl"=>"xyz.jpg", "id"=>"4", "blog"=>{"title"=>"", "body"=>"", "imgurl"=>"xyz.jpg"}}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:65:in `set_blog'
+[31mUnpermitted parameters: :id, :blog. Context: { controller: Api::V1::BlogsController, action: update, request: #<ActionDispatch::Request:0x00007ff23a4c0980>, params: {"title"=>"", "body"=>"", "imgurl"=>"xyz.jpg", "controller"=>"api/v1/blogs", "action"=>"update", "id"=>"4", "blog"=>{"title"=>"", "body"=>"", "imgurl"=>"xyz.jpg"}} }[0m
+Completed 500 Internal Server Error in 5ms (Views: 1.7ms | ActiveRecord: 0.1ms | Allocations: 2152)
+
+
+Started PATCH "/api/v1/blogs/4" for ::1 at 2022-10-26 16:38:13 +0530
+Processing by Api::V1::BlogsController#update as JSON
+  Parameters: {"title"=>"title 2", "body"=>"dsfdsfsdfsdfds", "imgurl"=>"xyz.jpg", "id"=>"4", "blog"=>{"title"=>"title 2", "body"=>"dsfdsfsdfsdfds", "imgurl"=>"xyz.jpg"}}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:65:in `set_blog'
+[31mUnpermitted parameters: :id, :blog. Context: { controller: Api::V1::BlogsController, action: update, request: #<ActionDispatch::Request:0x00007ff23a48b2a8>, params: {"title"=>"title 2", "body"=>"dsfdsfsdfsdfds", "imgurl"=>"xyz.jpg", "controller"=>"api/v1/blogs", "action"=>"update", "id"=>"4", "blog"=>{"title"=>"title 2", "body"=>"dsfdsfsdfsdfds", "imgurl"=>"xyz.jpg"}} }[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:47:in `update'
+  [1m[36mBlog Update (0.2ms)[0m  [1m[33mUPDATE "blogs" SET "title" = ?, "body" = ?, "imgurl" = ?, "updated_at" = ? WHERE "blogs"."id" = ?[0m  [["title", "title 2"], ["body", "dsfdsfsdfsdfds"], ["imgurl", "xyz.jpg"], ["updated_at", "2022-10-26 11:08:13.221271"], ["id", 4]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:47:in `update'
+  [1m[36mTRANSACTION (14.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:47:in `update'
+Completed 200 OK in 20ms (Views: 0.6ms | ActiveRecord: 14.3ms | Allocations: 2661)
+
+
+Started GET "/" for ::1 at 2022-10-26 16:38:13 +0530
+Processing by BlogsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/index.html.erb within layouts/application
+  Rendered blogs/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 3588)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.0ms | Allocations: 3849)
+
+
+Started GET "/api/v1/blogs/index" for ::1 at 2022-10-26 16:38:13 +0530
+Processing by Api::V1::BlogsController#index as */*
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:14:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.2ms | Allocations: 954)
+
+
+Started GET "/abc.jpg" for ::1 at 2022-10-26 16:38:13 +0530
+Started GET "/xyz.jpg" for ::1 at 2022-10-26 16:38:13 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/abc.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/xyz.jpg"):
+  
+Started GET "/sw.js" for ::1 at 2022-10-26 16:38:15 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/sw.js"):
+  
+Started GET "/" for ::1 at 2022-10-26 16:57:07 +0530
+Processing by BlogsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/index.html.erb within layouts/application
+  Rendered blogs/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 2688)
+Completed 200 OK in 12ms (Views: 11.2ms | Allocations: 2946)
+
+
+Started GET "/api/v1/blogs/index" for ::1 at 2022-10-26 16:57:07 +0530
+Processing by Api::V1::BlogsController#index as */*
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:14:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.4ms | Allocations: 1096)
+
+
+Started GET "/abc.jpg" for ::1 at 2022-10-26 16:57:08 +0530
+Started GET "/xyz.jpg" for ::1 at 2022-10-26 16:57:08 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/abc.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/xyz.jpg"):
+  
+Started GET "/api/v1/blogs/3" for ::1 at 2022-10-26 16:59:09 +0530
+Processing by Api::V1::BlogsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:65:in `set_blog'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 732)
+
+
+Started PATCH "/api/v1/blogs/3" for ::1 at 2022-10-26 16:59:19 +0530
+Processing by Api::V1::BlogsController#update as JSON
+  Parameters: {"title"=>"title2", "body"=>"body2", "imgurl"=>"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIL9S7PImqTRrGPGBHkGbK4nTzpEQxO5Gtv0IgYFzt&s", "id"=>"3", "blog"=>{"title"=>"title2", "body"=>"body2", "imgurl"=>"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIL9S7PImqTRrGPGBHkGbK4nTzpEQxO5Gtv0IgYFzt&s"}}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:65:in `set_blog'
+[31mUnpermitted parameters: :id, :blog. Context: { controller: Api::V1::BlogsController, action: update, request: #<ActionDispatch::Request:0x00007ff23ab2b680>, params: {"title"=>"title2", "body"=>"body2", "imgurl"=>"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIL9S7PImqTRrGPGBHkGbK4nTzpEQxO5Gtv0IgYFzt&s", "controller"=>"api/v1/blogs", "action"=>"update", "id"=>"3", "blog"=>{"title"=>"title2", "body"=>"body2", "imgurl"=>"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIL9S7PImqTRrGPGBHkGbK4nTzpEQxO5Gtv0IgYFzt&s"}} }[0m
+Completed 500 Internal Server Error in 5ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 1875)
+
+
+Started PATCH "/api/v1/blogs/3" for ::1 at 2022-10-26 16:59:21 +0530
+Processing by Api::V1::BlogsController#update as JSON
+  Parameters: {"title"=>"title2", "body"=>"body2", "imgurl"=>"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIL9S7PImqTRrGPGBHkGbK4nTzpEQxO5Gtv0IgYFzt&s", "id"=>"3", "blog"=>{"title"=>"title2", "body"=>"body2", "imgurl"=>"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIL9S7PImqTRrGPGBHkGbK4nTzpEQxO5Gtv0IgYFzt&s"}}
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:65:in `set_blog'
+[31mUnpermitted parameters: :id, :blog. Context: { controller: Api::V1::BlogsController, action: update, request: #<ActionDispatch::Request:0x00007ff23ab1efe8>, params: {"title"=>"title2", "body"=>"body2", "imgurl"=>"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIL9S7PImqTRrGPGBHkGbK4nTzpEQxO5Gtv0IgYFzt&s", "controller"=>"api/v1/blogs", "action"=>"update", "id"=>"3", "blog"=>{"title"=>"title2", "body"=>"body2", "imgurl"=>"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIL9S7PImqTRrGPGBHkGbK4nTzpEQxO5Gtv0IgYFzt&s"}} }[0m
+Completed 500 Internal Server Error in 3ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 1877)
+
+
+Started PATCH "/api/v1/blogs/3" for ::1 at 2022-10-26 16:59:22 +0530
+Processing by Api::V1::BlogsController#update as JSON
+  Parameters: {"title"=>"title2", "body"=>"body2", "imgurl"=>"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIL9S7PImqTRrGPGBHkGbK4nTzpEQxO5Gtv0IgYFzt&s", "id"=>"3", "blog"=>{"title"=>"title2", "body"=>"body2", "imgurl"=>"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIL9S7PImqTRrGPGBHkGbK4nTzpEQxO5Gtv0IgYFzt&s"}}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:65:in `set_blog'
+[31mUnpermitted parameters: :id, :blog. Context: { controller: Api::V1::BlogsController, action: update, request: #<ActionDispatch::Request:0x00007ff23aacb898>, params: {"title"=>"title2", "body"=>"body2", "imgurl"=>"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIL9S7PImqTRrGPGBHkGbK4nTzpEQxO5Gtv0IgYFzt&s", "controller"=>"api/v1/blogs", "action"=>"update", "id"=>"3", "blog"=>{"title"=>"title2", "body"=>"body2", "imgurl"=>"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIL9S7PImqTRrGPGBHkGbK4nTzpEQxO5Gtv0IgYFzt&s"}} }[0m
+Completed 500 Internal Server Error in 4ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 1877)
+
+
+Started PATCH "/api/v1/blogs/3" for ::1 at 2022-10-26 16:59:22 +0530
+Processing by Api::V1::BlogsController#update as JSON
+  Parameters: {"title"=>"title2", "body"=>"body2", "imgurl"=>"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIL9S7PImqTRrGPGBHkGbK4nTzpEQxO5Gtv0IgYFzt&s", "id"=>"3", "blog"=>{"title"=>"title2", "body"=>"body2", "imgurl"=>"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIL9S7PImqTRrGPGBHkGbK4nTzpEQxO5Gtv0IgYFzt&s"}}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:65:in `set_blog'
+[31mUnpermitted parameters: :id, :blog. Context: { controller: Api::V1::BlogsController, action: update, request: #<ActionDispatch::Request:0x00007ff23aabe350>, params: {"title"=>"title2", "body"=>"body2", "imgurl"=>"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIL9S7PImqTRrGPGBHkGbK4nTzpEQxO5Gtv0IgYFzt&s", "controller"=>"api/v1/blogs", "action"=>"update", "id"=>"3", "blog"=>{"title"=>"title2", "body"=>"body2", "imgurl"=>"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIL9S7PImqTRrGPGBHkGbK4nTzpEQxO5Gtv0IgYFzt&s"}} }[0m
+Completed 500 Internal Server Error in 4ms (Views: 0.9ms | ActiveRecord: 0.1ms | Allocations: 1876)
+
+
+Started PATCH "/api/v1/blogs/3" for ::1 at 2022-10-26 17:00:30 +0530
+Processing by Api::V1::BlogsController#update as JSON
+  Parameters: {"title"=>"title2", "body"=>"body2", "imgurl"=>"https://fujifilm-x.com/wp-content/uploads/2019/08/x-t3_sample-images02.jpg", "id"=>"3", "blog"=>{"title"=>"title2", "body"=>"body2", "imgurl"=>"https://fujifilm-x.com/wp-content/uploads/2019/08/x-t3_sample-images02.jpg"}}
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:65:in `set_blog'
+[31mUnpermitted parameters: :id, :blog. Context: { controller: Api::V1::BlogsController, action: update, request: #<ActionDispatch::Request:0x00007ff23aa7edb8>, params: {"title"=>"title2", "body"=>"body2", "imgurl"=>"https://fujifilm-x.com/wp-content/uploads/2019/08/x-t3_sample-images02.jpg", "controller"=>"api/v1/blogs", "action"=>"update", "id"=>"3", "blog"=>{"title"=>"title2", "body"=>"body2", "imgurl"=>"https://fujifilm-x.com/wp-content/uploads/2019/08/x-t3_sample-images02.jpg"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:47:in `update'
+  [1m[36mBlog Update (0.3ms)[0m  [1m[33mUPDATE "blogs" SET "title" = ?, "body" = ?, "imgurl" = ?, "updated_at" = ? WHERE "blogs"."id" = ?[0m  [["title", "title2"], ["body", "body2"], ["imgurl", "https://fujifilm-x.com/wp-content/uploads/2019/08/x-t3_sample-images02.jpg"], ["updated_at", "2022-10-26 11:30:30.198796"], ["id", 3]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:47:in `update'
+  [1m[36mTRANSACTION (26.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:47:in `update'
+Completed 200 OK in 37ms (Views: 0.9ms | ActiveRecord: 27.3ms | Allocations: 2667)
+
+
+Started GET "/" for ::1 at 2022-10-26 17:00:30 +0530
+Processing by BlogsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/index.html.erb within layouts/application
+  Rendered blogs/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 2786)
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.0ms | Allocations: 3047)
+
+
+Started GET "/api/v1/blogs/index" for ::1 at 2022-10-26 17:00:30 +0530
+Processing by Api::V1::BlogsController#index as */*
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:14:in `index'
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.1ms | Allocations: 955)
+
+
+Started GET "/xyz.jpg" for ::1 at 2022-10-26 17:00:30 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/xyz.jpg"):
+  
+Started GET "/api/v1/blogs/3" for ::1 at 2022-10-26 17:00:35 +0530
+Processing by Api::V1::BlogsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:65:in `set_blog'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 704)
+
+
+Started PATCH "/api/v1/blogs/3" for ::1 at 2022-10-26 17:00:46 +0530
+Processing by Api::V1::BlogsController#update as JSON
+  Parameters: {"title"=>"title 1", "body"=>"body 1", "imgurl"=>"https://fujifilm-x.com/wp-content/uploads/2019/08/x-t3_sample-images02.jpg", "id"=>"3", "blog"=>{"title"=>"title 1", "body"=>"body 1", "imgurl"=>"https://fujifilm-x.com/wp-content/uploads/2019/08/x-t3_sample-images02.jpg"}}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:65:in `set_blog'
+[31mUnpermitted parameters: :id, :blog. Context: { controller: Api::V1::BlogsController, action: update, request: #<ActionDispatch::Request:0x00007ff23a754098>, params: {"title"=>"title 1", "body"=>"body 1", "imgurl"=>"https://fujifilm-x.com/wp-content/uploads/2019/08/x-t3_sample-images02.jpg", "controller"=>"api/v1/blogs", "action"=>"update", "id"=>"3", "blog"=>{"title"=>"title 1", "body"=>"body 1", "imgurl"=>"https://fujifilm-x.com/wp-content/uploads/2019/08/x-t3_sample-images02.jpg"}} }[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:47:in `update'
+  [1m[36mBlog Update (0.2ms)[0m  [1m[33mUPDATE "blogs" SET "title" = ?, "body" = ?, "updated_at" = ? WHERE "blogs"."id" = ?[0m  [["title", "title 1"], ["body", "body 1"], ["updated_at", "2022-10-26 11:30:46.383223"], ["id", 3]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:47:in `update'
+  [1m[36mTRANSACTION (4.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:47:in `update'
+Completed 200 OK in 13ms (Views: 0.6ms | ActiveRecord: 4.8ms | Allocations: 2659)
+
+
+Started GET "/" for ::1 at 2022-10-26 17:00:46 +0530
+Processing by BlogsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/index.html.erb within layouts/application
+  Rendered blogs/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 2770)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms | Allocations: 3030)
+
+
+Started GET "/api/v1/blogs/index" for ::1 at 2022-10-26 17:00:46 +0530
+Processing by Api::V1::BlogsController#index as */*
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:14:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.3ms | Allocations: 955)
+
+
+Started GET "/xyz.jpg" for ::1 at 2022-10-26 17:00:46 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/xyz.jpg"):
+  
+Started GET "/api/v1/blogs/4" for ::1 at 2022-10-26 17:00:47 +0530
+Processing by Api::V1::BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:65:in `set_blog'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 703)
+
+
+Started PATCH "/api/v1/blogs/4" for ::1 at 2022-10-26 17:00:58 +0530
+Processing by Api::V1::BlogsController#update as JSON
+  Parameters: {"title"=>"title2", "body"=>"body2", "imgurl"=>"https://fujifilm-x.com/wp-content/uploads/2019/08/x-t3_sample-images02.jpg", "id"=>"4", "blog"=>{"title"=>"title2", "body"=>"body2", "imgurl"=>"https://fujifilm-x.com/wp-content/uploads/2019/08/x-t3_sample-images02.jpg"}}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:65:in `set_blog'
+[31mUnpermitted parameters: :id, :blog. Context: { controller: Api::V1::BlogsController, action: update, request: #<ActionDispatch::Request:0x00007ff23a478c98>, params: {"title"=>"title2", "body"=>"body2", "imgurl"=>"https://fujifilm-x.com/wp-content/uploads/2019/08/x-t3_sample-images02.jpg", "controller"=>"api/v1/blogs", "action"=>"update", "id"=>"4", "blog"=>{"title"=>"title2", "body"=>"body2", "imgurl"=>"https://fujifilm-x.com/wp-content/uploads/2019/08/x-t3_sample-images02.jpg"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:47:in `update'
+  [1m[36mBlog Update (0.3ms)[0m  [1m[33mUPDATE "blogs" SET "title" = ?, "body" = ?, "imgurl" = ?, "updated_at" = ? WHERE "blogs"."id" = ?[0m  [["title", "title2"], ["body", "body2"], ["imgurl", "https://fujifilm-x.com/wp-content/uploads/2019/08/x-t3_sample-images02.jpg"], ["updated_at", "2022-10-26 11:30:58.313770"], ["id", 4]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:47:in `update'
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:47:in `update'
+Completed 200 OK in 11ms (Views: 0.5ms | ActiveRecord: 5.0ms | Allocations: 2664)
+
+
+Started GET "/" for ::1 at 2022-10-26 17:00:58 +0530
+Processing by BlogsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/index.html.erb within layouts/application
+  Rendered blogs/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 2762)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.0ms | Allocations: 3023)
+
+
+Started GET "/api/v1/blogs/index" for ::1 at 2022-10-26 17:00:58 +0530
+Processing by Api::V1::BlogsController#index as */*
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:14:in `index'
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.1ms | Allocations: 956)
+
+
+Started GET "/d" for ::1 at 2022-10-26 17:12:01 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/d"):
+  
+Started GET "/api/v1/blogs/3" for ::1 at 2022-10-26 17:15:29 +0530
+Processing by Api::V1::BlogsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:64:in `set_blog'
+Completed 200 OK in 12ms (Views: 1.1ms | ActiveRecord: 1.0ms | Allocations: 4134)
+
+
+Started GET "/api/v1/blogs/3" for ::1 at 2022-10-26 17:38:17 +0530
+Processing by Api::V1::BlogsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:64:in `set_blog'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 847)
+
+
+Started GET "/" for ::1 at 2022-10-26 17:38:19 +0530
+Processing by BlogsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/index.html.erb within layouts/application
+  Rendered blogs/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 12)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 3023)
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.0ms | Allocations: 3976)
+
+
+Started GET "/api/v1/blogs/index" for ::1 at 2022-10-26 17:38:19 +0530
+Processing by Api::V1::BlogsController#index as */*
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:14:in `index'
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.2ms | Allocations: 1129)
+
+
+Started GET "/api/v1/blogs/3" for ::1 at 2022-10-26 17:38:22 +0530
+Processing by Api::V1::BlogsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:64:in `set_blog'
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 723)
+
+
+Started GET "/api/v1/blogs/index" for ::1 at 2022-10-26 17:38:23 +0530
+Processing by Api::V1::BlogsController#index as */*
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:14:in `index'
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.2ms | Allocations: 956)
+
+
+Started GET "/api/v1/blogs/4" for ::1 at 2022-10-26 17:38:25 +0530
+Processing by Api::V1::BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:64:in `set_blog'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 698)
+
+
+Started GET "/api/v1/blogs/index" for ::1 at 2022-10-26 17:38:27 +0530
+Processing by Api::V1::BlogsController#index as */*
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:14:in `index'
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.3ms | Allocations: 956)
+
+
+Started GET "/api/v1/blogs/4" for ::1 at 2022-10-26 17:38:41 +0530
+Processing by Api::V1::BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:64:in `set_blog'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 698)
+
+
+Started GET "/api/v1/blogs/index" for ::1 at 2022-10-26 17:38:44 +0530
+Processing by Api::V1::BlogsController#index as */*
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:14:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.2ms | Allocations: 956)
+
+
+Started GET "/api/v1/blogs/3" for ::1 at 2022-10-26 17:43:01 +0530
+Processing by Api::V1::BlogsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:64:in `set_blog'
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 698)
+
+
+Started GET "/" for ::1 at 2022-10-26 17:46:43 +0530
+Processing by BlogsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/index.html.erb within layouts/application
+  Rendered blogs/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 2770)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms | Allocations: 3032)
+
+
+Started GET "/api/v1/blogs/index" for ::1 at 2022-10-26 17:46:43 +0530
+Processing by Api::V1::BlogsController#index as */*
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:14:in `index'
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.2ms | Allocations: 956)
+
+
+Started GET "/api/v1/blogs/index" for ::1 at 2022-10-26 17:46:56 +0530
+Processing by Api::V1::BlogsController#index as */*
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:14:in `index'
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.3ms | Allocations: 956)
+
+
+Started GET "/api/v1/blogs/3" for ::1 at 2022-10-26 17:46:57 +0530
+Processing by Api::V1::BlogsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:64:in `set_blog'
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 698)
+
+
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBlog Update (1.3ms)[0m  [1m[33mUPDATE "blogs" SET "title" = ?, "body" = ?, "imgurl" = ?, "updated_at" = ? WHERE "blogs"."id" = ?[0m  [["title", "sample1"], ["body", "sample 1"], ["imgurl", "xyz.jpg"], ["updated_at", "2022-10-31 11:14:25.530647"], ["id", 4]]
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mBlog Load (0.5ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBlog Update (0.2ms)[0m  [1m[33mUPDATE "blogs" SET "title" = ?, "updated_at" = ? WHERE "blogs"."id" = ?[0m  [["title", "sa"], ["updated_at", "2022-10-31 12:29:21.798670"], ["id", 4]]
+  [1m[36mTRANSACTION (4.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2022-10-31 18:29:34 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/index.html.erb within layouts/application
+  Rendered blogs/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 427)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 152.7ms | Allocations: 27535)
+Completed 200 OK in 167ms (Views: 157.2ms | ActiveRecord: 0.0ms | Allocations: 33706)
+
+
+Started GET "/api/v1/blogs/index" for 127.0.0.1 at 2022-10-31 18:29:35 +0530
+Processing by Api::V1::BlogsController#index as */*
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/api/v1/blogs_controller.rb:14:in `index'
+Completed 200 OK in 30ms (Views: 25.5ms | ActiveRecord: 0.9ms | Allocations: 16262)
+
+
+Started GET "/xyz.jpg" for 127.0.0.1 at 2022-10-31 18:29:35 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/xyz.jpg"):
+  
+Started GET "/api/v1/blogs/3" for ::1 at 2022-10-31 18:29:37 +0530
+Processing by Api::V1::BlogsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mBlog Load (0.5ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/blogs_controller.rb:64:in `set_blog'
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 0.5ms | Allocations: 2950)
+
+
+Started OPTIONS "/api/v1/blogs/3" for ::1 at 2022-10-31 18:29:40 +0530
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/blogs/3"):
+  
+Started OPTIONS "/api/v1/blogs/3" for ::1 at 2022-10-31 18:29:40 +0530
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/blogs/3"):
+  
+Started OPTIONS "/api/v1/blogs/3" for ::1 at 2022-10-31 18:29:41 +0530
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/blogs/3"):
+  
+Started OPTIONS "/api/v1/blogs/3" for ::1 at 2022-10-31 18:29:41 +0530
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/blogs/3"):
+  
+Started OPTIONS "/api/v1/blogs/3" for ::1 at 2022-10-31 18:29:54 +0530
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/blogs/3"):
+  
+Started OPTIONS "/api/v1/blogs/3" for ::1 at 2022-10-31 18:29:56 +0530
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/blogs/3"):
+  
+Started OPTIONS "/api/v1/blogs/3" for ::1 at 2022-10-31 18:30:00 +0530
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/blogs/3"):
+  
+Started OPTIONS "/api/v1/blogs/3" for ::1 at 2022-10-31 18:30:00 +0530
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/blogs/3"):
+  
+Started OPTIONS "/api/v1/blogs/3" for ::1 at 2022-10-31 18:30:00 +0530
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/blogs/3"):
+  
+Started OPTIONS "/api/v1/blogs/3" for ::1 at 2022-10-31 18:30:23 +0530
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/blogs/3"):
+  
+Started OPTIONS "/api/v1/blogs/3" for ::1 at 2022-10-31 18:30:24 +0530
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/blogs/3"):
+  
+Started OPTIONS "/api/v1/blogs/3" for ::1 at 2022-10-31 18:30:54 +0530
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/blogs/3"):
+  
+Started OPTIONS "/api/v1/blogs/3" for ::1 at 2022-10-31 18:30:57 +0530
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/blogs/3"):
+  
+Started OPTIONS "/api/v1/blogs/3" for ::1 at 2022-10-31 18:31:27 +0530
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/blogs/3"):
+  
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."id" DESC LIMIT ?[0m  [["LIMIT", 3]]
+Started OPTIONS "/api/v1/blogs/3" for ::1 at 2022-10-31 18:49:55 +0530
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/blogs/3"):
+  
+Started OPTIONS "/api/v1/blogs/3" for ::1 at 2022-10-31 18:50:01 +0530
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/blogs/3"):
+  
+Started OPTIONS "/api/v1/blogs/3" for ::1 at 2022-10-31 18:50:07 +0530
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/blogs/3"):
+  
+Started OPTIONS "/api/v1/blogs/3" for ::1 at 2022-10-31 18:50:07 +0530
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/blogs/3"):
+  
+Started OPTIONS "/api/v1/blogs/3" for ::1 at 2022-10-31 18:50:08 +0530
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/blogs/3"):
+  
+Started OPTIONS "/api/v1/blogs/3" for ::1 at 2022-10-31 18:50:08 +0530
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/blogs/3"):
+  
+Started OPTIONS "/api/v1/blogs/3" for ::1 at 2022-10-31 18:56:20 +0530
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/blogs/3"):
+  
+Started OPTIONS "/api/v1/blogs/3" for ::1 at 2022-10-31 18:56:48 +0530
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/blogs/3"):
+  
