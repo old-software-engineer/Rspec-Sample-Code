@@ -39,6 +39,16 @@ $ rails db:migrate
 $ rails s
 ```
 
+In order to run test case for Blog model run:
+```
+$ bundle exec rspec ./spec/models/blog_spec.rb
+```
+
+In order to run test case for Blog controller run:
+```
+$ bundle exec rspec ./spec/requests/api/blogs_spec.rb
+```
+
 ## Gems
  
 **React-Rails**: React-Rails gem is used in this aap to implement React.
