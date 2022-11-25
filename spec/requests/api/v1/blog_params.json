@@ -1,0 +1,49 @@
+{
+    "blog_all":{
+        "title":"TEST1",
+        "body":"test12",
+        "imgurl":"https://fujifilm-x.com/wp-content/uploads/2019/08/x-t3_sample-images02.jpg"
+    },
+
+    "only_title":{
+        "title":"TEST1",
+        "body":null,
+        "imgurl":null
+    },
+
+    "only_body":{
+        "title":null,
+        "body":"test12",
+        "imgurl":null
+    },
+
+    "only_imgurl":{
+        "title":null,
+        "body":null,
+        "imgurl":"https://fujifilm-x.com/wp-content/uploads/2019/08/x-t3_sample-images02.jpg"
+    },
+
+    "invalid_url":{
+        "title":"TEST1",
+        "body":"test12",
+        "imgurl":"https://encrypted-tbn0.gstatic."
+    },
+
+    "change_title":{
+        "title":"sample title "
+    },
+
+    "change_body":{
+        "body":"sample body"
+    },
+
+    "change_url":{
+        "imgurl":"https://fujifilm-x.com.jpg"
+    },
+
+    "change_incorrect_url":{
+        "imgurl":"sample_image"
+    }
+
+
+}

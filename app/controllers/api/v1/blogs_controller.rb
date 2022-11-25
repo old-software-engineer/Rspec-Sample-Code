@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-
 # Api Controller
 module Api
   module V1
@@ -63,6 +62,8 @@ module Api
       # Use callbacks to share common setup or constraints between actions.
       def set_blog
         @blog = Blog.find(params[:id])
+      rescue ActiveRecord::RecordNotFound => e
+        render json: { error: e.to_s }, status: :not_found
       end
 
       # Only allow a list of trusted parameters through.

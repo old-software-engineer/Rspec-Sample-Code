@@ -8,8 +8,4 @@ class Blog < ApplicationRecord
   def has_valid_title?
     title.length > 3
   end
-
-  def short_blog?
-    body.length < 50
-  end
 end

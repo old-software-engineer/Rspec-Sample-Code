@@ -30,6 +30,7 @@ gem 'stimulus-rails'
 gem 'jbuilder'
 gem 'react-rails'
 gem 'rubocop-rails', require: false
+gem 'rubocop-rspec', '~> 2.15'
 gem 'webpacker'
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
@@ -55,6 +56,7 @@ gem 'bootsnap', require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'factory_bot_rails', '~> 6.2'
   gem 'rspec-rails', '~> 6.0.0'
 end
 

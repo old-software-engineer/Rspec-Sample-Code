@@ -10,6 +10,6 @@ Rails.application.routes.draw do
       delete 'blogs/:id', to: 'blogs#destroy'
     end
   end
-
+  get '*path', to: 'blogs#index'
   root 'blogs#index'
 end
