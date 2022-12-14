@@ -34,7 +34,7 @@ $ bundle exec rspec ./spec/models/blog_spec.rb
 In order to run test case for Blog controller run:
 
 ```
-$ bundle exec rspec ./spec/requests/api/blogs_spec.rb
+$ bundle exec rspec ./spec/requests/api/v1/blogs_spec.rb
 ```
 
 ## Screenshots
@@ -44,6 +44,19 @@ $ bundle exec rspec ./spec/requests/api/blogs_spec.rb
 
 ### Show Blog
 ![Showblog](https://user-images.githubusercontent.com/15182066/207579428-69556d81-0461-4a88-a56a-2d4d51a91e18.png)
+
+### Sucessful Run Of Test Case's For Blog Model
+![model rspec](https://user-images.githubusercontent.com/15182066/207582704-f753a7f4-0580-4a9a-be57-b91e7978b044.png)
+
+
+### Sucessful Run Of Test Case's For Blog Controller
+![controller rspec](https://user-images.githubusercontent.com/15182066/207582776-15b3ad8f-9dbe-42c6-9d53-29d939de7529.png)
+
+### Failed Test Case For Blog Model
+![error rspec model](https://user-images.githubusercontent.com/15182066/207584273-8a2decb5-ea36-4867-b620-738eb50f9e2b.png)
+
+### Failed Test Case For Blog Controller
+![error rspec controller](https://user-images.githubusercontent.com/15182066/207584363-626a10a0-c9d0-4872-ae4e-e440eec7e453.png)
 
 ## About
 
@@ -71,6 +84,19 @@ index.jsx imbeds a div container in our empty page with react App component. Thi
 The App.jsx consists of all the routes of our react app and the components corresponding to the routes.
 
 (In all components Bootstrap is being used for styling.)
+
+**Rspec**: 
+RSpec is a Behavior driven development tool. What this means is that, tests written in RSpec focus on the “behavior” of an application being tested.
+
+***Model Specs***:
+Use model specs to describe behavior of models (usually ActiveRecord-based) in the application.
+
+Model specs default to residing in the spec/models folder. Tagging any context with the metadata :type => :model treats its examples as model specs.
+
+***Controller Specs***:
+Use controller specs to describe behavior of Rails controllers.
+
+Controller specs default to residing in the spec/requests/api/v1.
 
 **Other components**:
 
