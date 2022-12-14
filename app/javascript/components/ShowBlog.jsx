@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+  import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 export class ShowBlog extends Component {
 
@@ -17,7 +17,7 @@ export class ShowBlog extends Component {
         let url = `http://localhost:3000/api/v1/blogs/${id}`;
         let data = await fetch(url);
         let parsedData = await data.json()
-        this.setState({blog: parsedData})
+        this.setState( parsedData )
       }
 
   render() {
@@ -40,7 +40,7 @@ export class ShowBlog extends Component {
     return (
       // Shows the selected blog
       <div className='container my-3'>
-         <img src={this.state.blog.imgurl}  alt="..." />
+         <img src={this.state.blog.imgurl} width={250} height={250} alt="..." />
          <h1>{this.state.blog.title}</h1>
          <p>{this.state.blog.body}</p>
          <button className='btn btn-primary mx-3' onClick={handleBtb}>Back to Blogs</button>
