@@ -40,12 +40,10 @@ $ bundle exec rspec ./spec/requests/api/blogs_spec.rb
 ## Screenshots
 
 ### Blog Listing
-
-<img src="/home/codegarage/Workspace/Rspec-Sample-Code/app/assets/images/Index.png">
+![Index](https://user-images.githubusercontent.com/15182066/207579239-c235fa0a-4ef6-493e-8e2f-605f72f6e685.png)
 
 ### Show Blog
-
-<img src="/home/codegarage/Workspace/Rspec-Sample-Code/app/assets/images/Showblog.png">
+![Showblog](https://user-images.githubusercontent.com/15182066/207579428-69556d81-0461-4a88-a56a-2d4d51a91e18.png)
 
 ## About
 
