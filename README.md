@@ -54,18 +54,7 @@ using React.js for the frontend and Ruby on Rails for the backend and have rspec
 
 ## About Rspec
 
-**Rspec**:
 RSpec is a Behavior driven development tool. What this means is that, tests written in RSpec focus on the “behavior” of an application being tested.
-
-**_Model Specs_**:
-Use model specs to describe behavior of models (usually ActiveRecord-based) in the application.
-
-Model specs default to residing in the spec/models folder. Tagging any context with the metadata :type => :model treats its examples as model specs.
-
-**_Controller Specs_**:
-Use controller specs to describe behavior of Rails controllers.
-
-Controller specs default to residing in the spec/requests/api/v1.
 
 **Screenshots**
 
@@ -83,13 +72,13 @@ In the ./spec/requests/api/v1/blogs_spec.rb data sent passes all the test cases.
 
 ### Failed Test Case For Blog Model
 
-In the ./spec/models/blog_spec.rb if we try to send image with a invalid url then a test which checks for the valid image url fails.
+In the ./spec/models/blog*spec.rb if we remove the not* from line 28 we get the error Imgurl is invalid and the test case fails.
 
 ![error rspec model](https://user-images.githubusercontent.com/15182066/207584273-8a2decb5-ea36-4867-b620-738eb50f9e2b.png)
 
 ### Failed Test Case For Blog Controller
 
-In the ./spec/requests/api/v1/blogs_spec.rb if we try to create a blog without params then the test case fails.
+In the ./spec/requests/api/v1/blogs_spec.rb if we change the expected status code of the response to 200 in line 68 then we get the failed test case of creating an empty blog.
 
 ![error rspec controller](https://user-images.githubusercontent.com/15182066/207584363-626a10a0-c9d0-4872-ae4e-e440eec7e453.png)
 
